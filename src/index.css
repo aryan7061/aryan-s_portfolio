@@ -125,6 +125,7 @@ button:focus-visible {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: visible;
   background-image:
     linear-gradient(rgba(45, 212, 167, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(45, 212, 167, 0.04) 1px, transparent 1px);
