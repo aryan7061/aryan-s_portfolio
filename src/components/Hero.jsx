@@ -6,7 +6,7 @@ export default function Hero() {
   const typed = useTypewriter(heroLines);
 
   return (
-    <section id="about" className="hero-section wrap">
+    <section className="hero-section wrap">
       <div className="hero">
         <div className="hero__main">
           <div className="status-pill">

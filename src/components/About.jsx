@@ -7,7 +7,7 @@ export default function About() {
   const [ref, visible] = useScrollReveal();
 
   return (
-    <section className="wrap">
+    <section id="about" className="wrap">
       <SectionHeading eyebrow="01 — About" title="What I bring" />
 
       <p className="about__summary">{profile.summary}</p>

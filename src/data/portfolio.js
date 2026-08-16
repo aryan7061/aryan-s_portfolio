@@ -179,21 +179,6 @@ export const projects = [
   },
 ];
 
-export const education = [
-  {
-    degree: "Master of Computer Applications (MCA)",
-    school: "Chandigarh University",
-    period: "2023 – 2025",
-  },
-  {
-    degree: "Bachelor of Computer Applications (BCA)",
-    school: "Chandigarh University",
-    period: "2020 – 2023",
-  },
-  { degree: "Senior Secondary (CBSE)", school: "", period: "2020" },
-  { degree: "Secondary (ICSE)", school: "", period: "2017" },
-];
-
 export const quote = {
   text: "First, solve the problem. Then, write the code.",
   author: "John Johnson",
