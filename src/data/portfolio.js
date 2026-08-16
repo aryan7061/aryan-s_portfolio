@@ -36,7 +36,7 @@ const renderIcon = `data:image/svg+xml,${encodeURIComponent(
 
 export const profile = {
   name: "Aryan Gupta",
-  role: "Frontend Developer",
+  role: "Web Developer",
   company: "Tricity Services",
   companyStart: "December 2025",
   email: "aryanguptawork26@gmail.com",
@@ -48,19 +48,19 @@ export const profile = {
   linkedinUrl: "https://www.linkedin.com/in/aryan-gupta-2026bvf",
   linkedinHandle: "aryan-gupta-2026bvf",
   resumeUrl: "/Aryan-Gupta-Resume.pdf",
-  status: "Open to Frontend Developer roles",
-  stackLine: "React.js · TypeScript",
+  status: "Open to Web Developer roles",
+  stackLine: "React.js · JavaScript · TypeScript",
   summary:
-    "Developer experienced in building React applications on the frontend and NestJS/GraphQL services on the backend, backed by PostgreSQL and MySQL/MongoDB. Comfortable working across the entire stack — from responsive UIs and Redux state management, to designing GraphQL APIs, structuring relational databases, and enforcing server-side authorization. Has independently built and deployed a production-style full-stack application end to end, and also works professionally alongside backend teams to ship functional web apps.",
+    "Developer experienced in building React applications on the frontend and MERN, NestJS/GraphQL services on the backend, backed by PostgreSQL and MySQL/MongoDB. Comfortable working across the entire stack — from responsive UIs and Redux state management, to designing GraphQL APIs, structuring relational databases, and enforcing server-side authorization. Has independently built and deployed a production-style full-stack application end to end, and also works professionally alongside backend teams to ship functional web apps.",
 };
 
 export const heroLines = [
   "$ whoami",
   "  Aryan Gupta",
   "$ cat role.txt",
-  "  Frontend Developer @ Tricity Services",
+  "  Web Developer @ Tricity Services",
   "$ echo $STACK",
-  '  "React · TypeScript · Redux · GraphQL"',
+  '  "React · JavaScript · TypeScript · Redux · GraphQL"',
   "$ cat status.txt",
   "  open_to_work=true",
 ];

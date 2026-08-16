@@ -1,35 +1,286 @@
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: transparent;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.switch #theme-switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent);
+  transition: 0.4s;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-wash);
+.sun-moon {
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffd43b;
+  overflow: hidden;
+  transition: 0.4s;
 }
 
-.theme-toggle__glyph {
-  font-size: 0.8rem;
-  line-height: 1;
+#theme-switch-input:checked + .slider {
+  background-color: var(--bg);
 }
 
-@media (max-width: 480px) {
-  .theme-toggle {
-    padding: 6px 8px;
+#theme-switch-input:focus-visible + .slider {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+#theme-switch-input:checked + .slider .sun-moon {
+  transform: translateX(22px);
+  background-color: #fff;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: translateX(22px) rotate(0);
   }
+  100% {
+    transform: translateX(22px) rotate(360deg);
+  }
+}
 
-  .theme-toggle__label {
-    display: none;
+.moon-dot {
+  opacity: 0;
+  transition: 0.4s;
+  fill: #999;
+}
+
+#theme-switch-input:checked + .slider .sun-moon .moon-dot {
+  opacity: 1;
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round .sun-moon {
+  border-radius: 50%;
+}
+
+#moon-dot-1 {
+  left: 8px;
+  top: 2px;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  z-index: 4;
+}
+
+#moon-dot-2 {
+  left: 2px;
+  top: 8px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  z-index: 4;
+}
+
+#moon-dot-3 {
+  left: 13px;
+  top: 15px;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  z-index: 4;
+}
+
+#light-ray-1,
+#light-ray-2,
+#light-ray-3 {
+  position: absolute;
+  z-index: -1;
+  fill: #fff;
+  opacity: 10%;
+}
+
+#light-ray-1 {
+  left: -7px;
+  top: -7px;
+  width: 36px;
+  height: 36px;
+}
+
+#light-ray-2 {
+  left: -14px;
+  top: -14px;
+  width: 46px;
+  height: 46px;
+}
+
+#light-ray-3 {
+  left: -15px;
+  top: -15px;
+  width: 50px;
+  height: 50px;
+}
+
+.cloud-light {
+  position: absolute;
+  fill: #eee;
+  opacity: 1;
+  transition: 0.4s;
+  animation-name: cloud-move;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.cloud-dark {
+  position: absolute;
+  fill: #ccc;
+  opacity: 1;
+  transition: 0.4s;
+  animation-name: cloud-move;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+#theme-switch-input:checked + .slider .cloud-light,
+#theme-switch-input:checked + .slider .cloud-dark {
+  opacity: 0;
+}
+
+#cloud-1 {
+  left: 25px;
+  top: 13px;
+  width: 34px;
+}
+
+#cloud-2 {
+  left: 37px;
+  top: 8px;
+  width: 17px;
+}
+
+#cloud-3 {
+  left: 15px;
+  top: 20px;
+  width: 25px;
+}
+
+#cloud-4 {
+  left: 30px;
+  top: 15px;
+  width: 34px;
+}
+
+#cloud-5 {
+  left: 40px;
+  top: 12px;
+  width: 17px;
+}
+
+#cloud-6 {
+  left: 18px;
+  top: 22px;
+  width: 25px;
+}
+
+@keyframes cloud-move {
+  0% {
+    transform: translateX(0px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  80% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.stars {
+  transform: translateY(-27px);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.star {
+  fill: #fff;
+  position: absolute;
+  transition: 0.4s;
+  animation-name: star-twinkle;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#theme-switch-input:checked + .slider .stars {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#star-1 {
+  width: 16px;
+  top: 2px;
+  left: 3px;
+  animation-delay: 0.3s;
+}
+
+#star-2 {
+  width: 5px;
+  top: 13px;
+  left: 3px;
+}
+
+#star-3 {
+  width: 10px;
+  top: 16px;
+  left: 8px;
+  animation-delay: 0.6s;
+}
+
+#star-4 {
+  width: 15px;
+  top: 0px;
+  left: 15px;
+  animation-delay: 1.3s;
+}
+
+@keyframes star-twinkle {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun-moon,
+  .cloud-light,
+  .cloud-dark,
+  .star,
+  .slider,
+  .stars {
+    animation: none !important;
+    transition: none !important;
   }
 }
