@@ -1,0 +1,53 @@
+.quote-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-box__topline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.quote-mark {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: -8px;
+}
+
+blockquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0;
+}
+
+.quote-attr {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 16px;
+}

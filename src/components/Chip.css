@@ -1,0 +1,18 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  background: rgba(45, 212, 167, 0.08);
+  border: 1px solid rgba(45, 212, 167, 0.2);
+  color: var(--accent);
+  padding: 3px 9px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.chip--sm {
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}

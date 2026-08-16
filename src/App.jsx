@@ -4,6 +4,10 @@ import MarqueeStrip from "./components/MarqueeStrip";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Quote from "./components/Quote";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -19,6 +23,13 @@ export default function App() {
       <Skills />
       <div className="rule" />
       <Experience />
+      <div className="rule" />
+      <Projects />
+      <div className="rule" />
+      <Quote />
+      <div className="rule" />
+      <Contact />
+      <Footer />
     </div>
   );
 }

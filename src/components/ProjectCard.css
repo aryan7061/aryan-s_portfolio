@@ -1,0 +1,147 @@
+.project {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 32px;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.project__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+}
+
+.project__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.project__index {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.project h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.project__kicker {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 6px 0 0;
+}
+
+.project__body {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 16px 0 0;
+}
+
+.project__points {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project__points li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.project__points li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.project__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.project__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.plink {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.plink:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(45, 212, 167, 0.05);
+}
+
+.plink--disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.plink--disabled:hover {
+  border-color: var(--line);
+  color: var(--muted);
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .project {
+    padding: 24px;
+  }
+
+  .project__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .project__links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
