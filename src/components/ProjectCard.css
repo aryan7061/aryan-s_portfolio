@@ -1,8 +1,11 @@
 .project {
-  background: var(--panel);
-  border: 1px solid var(--line);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 4px;
   padding: 32px;
+  box-shadow: var(--card-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   transition:
     border-color 0.2s,
     transform 0.2s;
@@ -117,7 +120,7 @@
 .plink:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(45, 212, 167, 0.05);
+  background: var(--accent-wash);
 }
 
 .plink--disabled {

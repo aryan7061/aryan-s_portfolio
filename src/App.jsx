@@ -8,8 +8,13 @@ import Projects from "./components/Projects";
 import Quote from "./components/Quote";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { useActiveSection } from "./hooks/useActiveSection";
+
+const NAV_SECTION_IDS = ["about", "stack", "experience", "projects", "contact"];
 
 export default function App() {
+  useActiveSection(NAV_SECTION_IDS);
+
   return (
     <div className="page" id="top">
       <div className="glow glow-a" />

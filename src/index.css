@@ -6,7 +6,30 @@
   --accent: #2dd4a7;
   --accent-bright: #39e8b0;
   --text: #d6f5ea;
+  --text-soft: #a7dfc8;
   --muted: #6fa98a;
+
+  --selection-bg: rgba(45, 212, 167, 0.25);
+  --grid-line: rgba(45, 212, 167, 0.04);
+  --glow1: rgba(45, 212, 167, 0.06);
+  --glow2: rgba(15, 74, 62, 0.4);
+  --grad: linear-gradient(135deg, #2dd4a7 0%, #39e8b0 50%, #a7dfc8 100%);
+  --accent-soft: rgba(45, 212, 167, 0.08);
+  --accent-line: rgba(45, 212, 167, 0.2);
+  --accent-wash: rgba(45, 212, 167, 0.05);
+  --accent-wash2: rgba(45, 212, 167, 0.07);
+  --marker-ring: rgba(45, 212, 167, 0.12);
+  --raised: rgba(255, 255, 255, 0.02);
+  --raised2: rgba(255, 255, 255, 0.015);
+  --strip-bg: rgba(13, 26, 22, 0.6);
+  --nav-bg: rgba(8, 15, 13, 0.88);
+  --card-shadow: none;
+
+  /* glassmorphism surface — translucent panel + blur, same panel color as --panel */
+  --glass-bg: rgba(13, 26, 22, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(14px) saturate(160%);
+
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
@@ -14,6 +37,37 @@
   --container: 1120px;
   --section-pad-y: 88px;
   --section-pad-x: 48px;
+}
+
+html[data-theme="light"] {
+  --bg: #e5fef2;
+  --panel: #f4fffa;
+  --panel-hover: #ddf9ec;
+  --line: #b6e6d2;
+  --accent: #28745a;
+  --accent-bright: #174c3a;
+  --text: #08271c;
+  --text-soft: #174c3a;
+  --muted: #389c7a;
+
+  --selection-bg: rgba(40, 116, 90, 0.25);
+  --grid-line: rgba(8, 39, 28, 0.05);
+  --glow1: rgba(72, 194, 152, 0.16);
+  --glow2: rgba(90, 237, 187, 0.2);
+  --grad: linear-gradient(135deg, #28745a 0%, #48c298 55%, #174c3a 100%);
+  --accent-soft: rgba(40, 116, 90, 0.07);
+  --accent-line: rgba(56, 156, 122, 0.3);
+  --accent-wash: rgba(40, 116, 90, 0.05);
+  --accent-wash2: rgba(40, 116, 90, 0.09);
+  --marker-ring: rgba(40, 116, 90, 0.12);
+  --raised: rgba(8, 39, 28, 0.02);
+  --raised2: rgba(8, 39, 28, 0.015);
+  --strip-bg: rgba(244, 255, 250, 0.75);
+  --nav-bg: rgba(229, 254, 242, 0.9);
+  --card-shadow: 0 2px 10px rgba(8, 39, 28, 0.06);
+
+  --glass-bg: rgba(244, 255, 250, 0.6);
+  --glass-border: rgba(8, 39, 28, 0.08);
 }
 
 * {
@@ -24,6 +78,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* keeps section headings clear of the sticky navbar when landing via #hash */
+#about,
+#stack,
+#experience,
+#projects,
+#contact {
+  scroll-margin-top: 80px;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -31,6 +94,9 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
 img {
@@ -56,7 +122,7 @@ button {
 }
 
 ::selection {
-  background: rgba(45, 212, 167, 0.25);
+  background: var(--selection-bg);
   color: var(--text);
 }
 
@@ -119,6 +185,9 @@ button:focus-visible {
     transform: none;
     transition: none;
   }
+  body {
+    transition: none;
+  }
 }
 
 .page {
@@ -127,8 +196,8 @@ button:focus-visible {
   overflow-x: hidden;
   overflow-y: visible;
   background-image:
-    linear-gradient(rgba(45, 212, 167, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 167, 0.04) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -144,11 +213,7 @@ button:focus-visible {
   height: 700px;
   top: -200px;
   right: -150px;
-  background: radial-gradient(
-    circle,
-    rgba(45, 212, 167, 0.06) 0%,
-    transparent 65%
-  );
+  background: radial-gradient(circle, var(--glow1) 0%, transparent 65%);
 }
 
 .glow-b {
@@ -156,11 +221,7 @@ button:focus-visible {
   height: 500px;
   top: 60%;
   left: -100px;
-  background: radial-gradient(
-    circle,
-    rgba(15, 74, 62, 0.4) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, var(--glow2) 0%, transparent 70%);
 }
 
 .wrap {
@@ -204,17 +265,21 @@ button:focus-visible {
 }
 
 .grad-text {
-  background-image: linear-gradient(
-    135deg,
-    #2dd4a7 0%,
-    #39e8b0 50%,
-    #a7dfc8 100%
-  );
+  background-image: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   font-style: italic;
+}
+
+/* shared glassmorphism surface — applied to card-like panels across sections */
+.glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-color: var(--glass-border);
+  box-shadow: var(--card-shadow);
 }
 
 @media (max-width: 720px) {

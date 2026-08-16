@@ -39,6 +39,8 @@ export const profile = {
   company: "Tricity Services",
   companyStart: "December 2025",
   email: "aryanguptawork26@gmail.com",
+  emailUrl:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=aryanguptawork26@gmail.com",
   phone: "+91 7367993351",
   githubUrl: "https://github.com/aryan7061",
   githubHandle: "aryan7061",

@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Runs before first paint so the page never flashes the wrong theme.
+      (function () {
+        var stored = localStorage.getItem("aryan-theme");
+        var theme = stored === "light" || stored === "dark" ? stored : "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <title>Aryan Gupta — Frontend Developer</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta
       name="description"
       content="Aryan Gupta — Frontend Developer at Tricity Services, building responsive, API-driven interfaces with React.js and TypeScript."
     />
+
+    <!-- og:image is a relative path — swap for the full https:// URL once the site has a production domain -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aryan Gupta — Frontend Developer" />
     <meta property="og:title" content="Aryan Gupta — Frontend Developer" />

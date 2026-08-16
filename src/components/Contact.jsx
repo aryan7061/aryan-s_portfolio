@@ -1,18 +1,6 @@
 import { profile } from "../data/portfolio";
 import "./Contact.css";
 
-const contactJsonHead = `{
-  "name": "${profile.name}",
-  "phone": "${profile.phone}",
-  "email": "${profile.email.replace("@", "\n    @")}",
-  "github": "${profile.githubHandle}",
-  "linkedin":
-    "${profile.linkedinHandle}",
-  "status": `;
-
-const contactJsonTail = `
-}`;
-
 export default function Contact() {
   return (
     <section id="contact" className="wrap">
@@ -29,7 +17,12 @@ export default function Contact() {
             interfaces.
           </p>
           <div className="btn-row" style={{ animation: "none" }}>
-            <a className="btn btn--solid" href={`mailto:${profile.email}`}>
+            <a
+              className="btn btn--solid"
+              href={profile.emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               send_message
             </a>
             <a
@@ -49,9 +42,25 @@ export default function Contact() {
         <div className="json-card">
           <div className="json-card__head">contact.json</div>
           <pre>
-            {contactJsonHead}
+            {`{
+  "name": "${profile.name}",
+  "phone": "${profile.phone}",
+  "email": "`}
+            <a
+              href={profile.emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {profile.email}
+            </a>
+            {`",
+  "github": "${profile.githubHandle}",
+  "linkedin":
+    "${profile.linkedinHandle}",
+  "status": `}
             <b>"open_to_work"</b>
-            {contactJsonTail}
+            {`
+}`}
           </pre>
         </div>
       </div>

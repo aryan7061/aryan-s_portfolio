@@ -34,7 +34,12 @@ export default function Hero() {
           </p>
 
           <div className="btn-row">
-            <a className="btn btn--solid" href={`mailto:${profile.email}`}>
+            <a
+              className="btn btn--solid"
+              href={profile.emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               get_in_touch
             </a>
             <a

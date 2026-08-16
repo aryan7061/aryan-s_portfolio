@@ -6,17 +6,32 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px var(--section-pad-x);
-  background: rgba(8, 15, 13, 0.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
 }
 
 .navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--mono);
   font-size: 0.85rem;
   color: var(--accent);
   letter-spacing: 0.06em;
+}
+
+.navbar__brand-mark {
+  border-radius: 50%;
+  background: #e5fef2;
+  padding: 2px;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .navbar__links {
@@ -44,7 +59,7 @@
 }
 
 .navbar__cta:hover {
-  background: rgba(45, 212, 167, 0.08);
+  background: var(--accent-soft);
 }
 
 .navbar__toggle {
@@ -72,6 +87,10 @@
 
   .navbar__toggle {
     display: block;
+  }
+
+  .navbar__right {
+    gap: 10px;
   }
 
   .navbar__links {
