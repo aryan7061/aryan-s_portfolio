@@ -4,11 +4,11 @@
   --panel-hover: #102820;
   --line: #1a3d30;
   --accent: #2dd4a7;
+  --accent-rgb: 45, 212, 167;
   --accent-bright: #39e8b0;
   --text: #d6f5ea;
   --text-soft: #a7dfc8;
   --muted: #6fa98a;
-
   --selection-bg: rgba(45, 212, 167, 0.25);
   --grid-line: rgba(45, 212, 167, 0.04);
   --glow1: rgba(45, 212, 167, 0.06);
@@ -23,6 +23,7 @@
   --raised2: rgba(255, 255, 255, 0.015);
   --strip-bg: rgba(13, 26, 22, 0.6);
   --nav-bg: rgba(8, 15, 13, 0.88);
+  --nav-links-bg: rgba(8, 15, 13, 0.94);
   --card-shadow: none;
 
   /* glassmorphism surface — translucent panel + blur, same panel color as --panel */
@@ -45,6 +46,7 @@ html[data-theme="light"] {
   --panel-hover: #ddf9ec;
   --line: #b6e6d2;
   --accent: #28745a;
+  --accent-rgb: 40, 116, 90;
   --accent-bright: #174c3a;
   --text: #08271c;
   --text-soft: #174c3a;
@@ -64,6 +66,7 @@ html[data-theme="light"] {
   --raised2: rgba(8, 39, 28, 0.015);
   --strip-bg: rgba(244, 255, 250, 0.75);
   --nav-bg: rgba(229, 254, 242, 0.9);
+  --nav-links-bg: rgba(229, 254, 242, 0.95);
   --card-shadow: 0 2px 10px rgba(8, 39, 28, 0.06);
 
   --glass-bg: rgba(244, 255, 250, 0.6);

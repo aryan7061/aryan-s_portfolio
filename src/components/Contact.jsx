@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolio";
+import ContactTicket from "./ContactTicket";
 import "./Contact.css";
 
 export default function Contact() {
@@ -10,8 +11,7 @@ export default function Contact() {
             05 — Contact
           </div>
           <h2 className="contact__title">
-            Open to <span className="grad-text">Web Development</span>{" "}
-            opportunities
+            Open to <span className="grad-text">Frontend</span> opportunities
           </h2>
           <p>
             Looking for relevant roles where I can build production-grade React
@@ -40,30 +40,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="json-card">
-          <div className="json-card__head">contact.json</div>
-          <pre>
-            {`{
-  "name": "${profile.name}",
-  "phone": "${profile.phone}",
-  "email": "`}
-            <a
-              href={profile.emailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {profile.email}
-            </a>
-            {`",
-  "github": "${profile.githubHandle}",
-  "linkedin":
-    "${profile.linkedinHandle}",
-  "status": `}
-            <b>"open_to_work"</b>
-            {`
-}`}
-          </pre>
-        </div>
+        <ContactTicket />
       </div>
     </section>
   );

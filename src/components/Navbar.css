@@ -101,8 +101,11 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--nav-links-bg);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid var(--glass-border);
     display: none;
   }
 

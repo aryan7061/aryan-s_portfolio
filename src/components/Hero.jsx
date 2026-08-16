@@ -1,10 +1,8 @@
-import { profile, heroLines, facts } from "../data/portfolio";
-import { useTypewriter } from "../hooks/useTypewriter";
+import { profile, facts } from "../data/portfolio";
+import HeroLaptop from "./HeroLaptop";
 import "./Hero.css";
 
 export default function Hero() {
-  const typed = useTypewriter(heroLines);
-
   return (
     <section className="hero-section wrap">
       <div className="hero">
@@ -64,20 +62,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="terminal" aria-hidden="true">
-          <div className="terminal__bar">
-            <span className="terminal__dot" style={{ background: "#ff5f57" }} />
-            <span className="terminal__dot" style={{ background: "#febc2e" }} />
-            <span className="terminal__dot" style={{ background: "#28c840" }} />
-            <span className="terminal__path">~/aryan — zsh</span>
-          </div>
-          <div className="terminal__body">
-            <pre>
-              {typed}
-              <span className="caret">_</span>
-            </pre>
-          </div>
-        </div>
+        <HeroLaptop />
       </div>
 
       <div className="facts">
