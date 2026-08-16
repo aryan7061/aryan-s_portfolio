@@ -1,3 +1,38 @@
+import reactIcon from "devicon/icons/react/react-original.svg";
+import typescriptIcon from "devicon/icons/typescript/typescript-original.svg";
+import javascriptIcon from "devicon/icons/javascript/javascript-original.svg";
+import reduxIcon from "devicon/icons/redux/redux-original.svg";
+import tailwindIcon from "devicon/icons/tailwindcss/tailwindcss-original.svg";
+import html5Icon from "devicon/icons/html5/html5-original.svg";
+import css3Icon from "devicon/icons/css3/css3-original.svg";
+import viteIcon from "devicon/icons/vitejs/vitejs-original.svg";
+import graphqlIcon from "devicon/icons/graphql/graphql-plain.svg";
+import jsonIcon from "devicon/icons/json/json-original.svg";
+import axiosIcon from "devicon/icons/axios/axios-plain.svg";
+import materialUiIcon from "devicon/icons/materialui/materialui-original.svg";
+import antDesignIcon from "devicon/icons/antdesign/antdesign-original.svg";
+import bootstrapIcon from "devicon/icons/bootstrap/bootstrap-original.svg";
+import reactRouterIcon from "devicon/icons/reactrouter/reactrouter-original.svg";
+import nodejsIcon from "devicon/icons/nodejs/nodejs-original.svg";
+import nestjsIcon from "devicon/icons/nestjs/nestjs-original.svg";
+import expressIcon from "devicon/icons/express/express-original.svg";
+import postgresqlIcon from "devicon/icons/postgresql/postgresql-original.svg";
+import mongodbIcon from "devicon/icons/mongodb/mongodb-original.svg";
+import mysqlIcon from "devicon/icons/mysql/mysql-original.svg";
+import gitIcon from "devicon/icons/git/git-original.svg";
+import githubIcon from "devicon/icons/github/github-original.svg";
+import figmaIcon from "devicon/icons/figma/figma-original.svg";
+import vscodeIcon from "devicon/icons/vscode/vscode-original.svg";
+import vercelIcon from "devicon/icons/vercel/vercel-original.svg";
+import chromeIcon from "devicon/icons/chrome/chrome-original.svg";
+import { siRender } from "simple-icons";
+
+// devicon has no Render logo; build one from simple-icons' path + brand hex
+// instead of relying on its .svg string, so the color is explicit either way.
+const renderIcon = `data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#${siRender.hex}"><path d="${siRender.path}"/></svg>`,
+)}`;
+
 export const profile = {
   name: "Aryan Gupta",
   role: "Frontend Developer",
@@ -53,56 +88,51 @@ export const highlights = [
   },
 ];
 
-const DEV = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
-
 export const skillGroups = [
   {
     label: "Frontend",
     skills: [
-      { name: "React.js", icon: `${DEV}react/react-original.svg` },
-      { name: "TypeScript", icon: `${DEV}typescript/typescript-original.svg` },
-      { name: "JavaScript", icon: `${DEV}javascript/javascript-original.svg` },
-      { name: "Redux", icon: `${DEV}redux/redux-original.svg` },
-      { name: "Redux Toolkit", icon: `${DEV}redux/redux-original.svg` }, // no distinct devicon logo — reuses Redux's
-      { name: "Tailwind", icon: `${DEV}tailwindcss/tailwindcss-original.svg` },
-      { name: "HTML5", icon: `${DEV}html5/html5-original.svg` },
-      { name: "CSS3", icon: `${DEV}css3/css3-original.svg` },
-      { name: "Vite", icon: `${DEV}vitejs/vitejs-original.svg` },
-      { name: "GraphQL", icon: `${DEV}graphql/graphql-plain.svg` },
+      { name: "React.js", icon: reactIcon },
+      { name: "TypeScript", icon: typescriptIcon },
+      { name: "JavaScript", icon: javascriptIcon },
+      { name: "Redux", icon: reduxIcon },
+      { name: "Redux Toolkit", icon: reduxIcon }, // no distinct devicon logo — reuses Redux's
+      { name: "Tailwind", icon: tailwindIcon },
+      { name: "HTML5", icon: html5Icon },
+      { name: "CSS3", icon: css3Icon },
+      { name: "Vite", icon: viteIcon },
+      { name: "GraphQL", icon: graphqlIcon },
       { name: "RESTful APIs", icon: null },
-      { name: "JSON", icon: `${DEV}json/json-original.svg` },
-      { name: "Axios", icon: `${DEV}axios/axios-plain.svg` },
-      { name: "Material UI", icon: `${DEV}materialui/materialui-original.svg` },
-      { name: "Ant Design", icon: `${DEV}antdesign/antdesign-original.svg` },
-      { name: "Bootstrap", icon: `${DEV}bootstrap/bootstrap-original.svg` },
-      {
-        name: "React Router",
-        icon: `${DEV}reactrouter/reactrouter-original.svg`,
-      },
+      { name: "JSON", icon: jsonIcon },
+      { name: "Axios", icon: axiosIcon },
+      { name: "Material UI", icon: materialUiIcon },
+      { name: "Ant Design", icon: antDesignIcon },
+      { name: "Bootstrap", icon: bootstrapIcon },
+      { name: "React Router", icon: reactRouterIcon },
     ],
   },
   {
     label: "Backend",
     skills: [
-      { name: "Node.js", icon: `${DEV}nodejs/nodejs-original.svg` },
-      { name: "NestJS", icon: `${DEV}nestjs/nestjs-original.svg` },
-      { name: "Express.js", icon: `${DEV}express/express-original.svg` },
+      { name: "Node.js", icon: nodejsIcon },
+      { name: "NestJS", icon: nestjsIcon },
+      { name: "Express.js", icon: expressIcon },
       { name: "TypeORM", icon: null },
-      { name: "PostgreSQL", icon: `${DEV}postgresql/postgresql-original.svg` },
-      { name: "MongoDB", icon: `${DEV}mongodb/mongodb-original.svg` },
-      { name: "MySQL", icon: `${DEV}mysql/mysql-original.svg` },
+      { name: "PostgreSQL", icon: postgresqlIcon },
+      { name: "MongoDB", icon: mongodbIcon },
+      { name: "MySQL", icon: mysqlIcon },
     ],
   },
   {
     label: "Tools",
     skills: [
-      { name: "Git", icon: `${DEV}git/git-original.svg` },
-      { name: "GitHub", icon: `${DEV}github/github-original.svg` },
-      { name: "Figma", icon: `${DEV}figma/figma-original.svg` },
-      { name: "VS Code", icon: `${DEV}vscode/vscode-original.svg` },
-      { name: "Vercel", icon: `${DEV}vercel/vercel-original.svg` },
-      { name: "DevTools", icon: `${DEV}chrome/chrome-original.svg` },
-      { name: "Render", icon: null },
+      { name: "Git", icon: gitIcon },
+      { name: "GitHub", icon: githubIcon },
+      { name: "Figma", icon: figmaIcon },
+      { name: "VS Code", icon: vscodeIcon },
+      { name: "Vercel", icon: vercelIcon },
+      { name: "DevTools", icon: chromeIcon },
+      { name: "Render", icon: renderIcon },
     ],
   },
 ];
