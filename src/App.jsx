@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Quote from "./components/Quote";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollNav from "./components/ScrollNav";
 import { useActiveSection } from "./hooks/useActiveSection";
 
 const NAV_SECTION_IDS = ["about", "stack", "experience", "projects", "contact"];
@@ -35,6 +36,7 @@ export default function App() {
       <div className="rule" />
       <Contact />
       <Footer />
+      <ScrollNav />
     </div>
   );
 }

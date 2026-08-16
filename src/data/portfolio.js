@@ -25,6 +25,7 @@ import figmaIcon from "devicon/icons/figma/figma-original.svg";
 import vscodeIcon from "devicon/icons/vscode/vscode-original.svg";
 import vercelIcon from "devicon/icons/vercel/vercel-original.svg";
 import chromeIcon from "devicon/icons/chrome/chrome-original.svg";
+import typeormIcon from "../assets/icons/typeorm.svg";
 import { siRender } from "simple-icons";
 
 // devicon has no Render logo; build one from simple-icons' path + brand hex
@@ -119,7 +120,7 @@ export const skillGroups = [
       { name: "Node.js", icon: nodejsIcon },
       { name: "NestJS", icon: nestjsIcon },
       { name: "Express.js", icon: expressIcon },
-      { name: "TypeORM", icon: null },
+      { name: "TypeORM", icon: typeormIcon },
       { name: "PostgreSQL", icon: postgresqlIcon },
       { name: "MongoDB", icon: mongodbIcon },
       { name: "MySQL", icon: mysqlIcon },
@@ -207,7 +208,7 @@ export const projects = [
       "Material UI",
       "YouTube API (RapidAPI)",
     ],
-    links: null, // no live demo/repo yet — later phase renders the disabled "links_soon" state
+    links: null,
   },
 ];
 

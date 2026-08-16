@@ -1,0 +1,130 @@
+.scroll-nav {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.scroll-nav.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-nav__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--card-shadow);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.scroll-nav__btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+
+/* the fanned-out cluster — a grid of individually glass, individually
+   animated bubbles, rather than one solid list panel */
+.scroll-nav__menu {
+  position: absolute;
+  bottom: 56px;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(88px, 1fr));
+  justify-items: stretch;
+  gap: 8px;
+}
+
+@keyframes bubble-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.scroll-nav__bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--card-shadow);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  animation: bubble-pop 0.24s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.scroll-nav__bubble:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+
+/* staggered pop-in, cascading outward from the trigger button */
+.scroll-nav__bubble:nth-child(1) {
+  animation-delay: 0ms;
+}
+.scroll-nav__bubble:nth-child(2) {
+  animation-delay: 30ms;
+}
+.scroll-nav__bubble:nth-child(3) {
+  animation-delay: 60ms;
+}
+.scroll-nav__bubble:nth-child(4) {
+  animation-delay: 90ms;
+}
+.scroll-nav__bubble:nth-child(5) {
+  animation-delay: 120ms;
+}
+.scroll-nav__bubble:nth-child(6) {
+  animation-delay: 150ms;
+}
+
+@media (max-width: 720px) {
+  .scroll-nav {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .scroll-nav__menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-nav__bubble {
+    animation: none;
+  }
+}
