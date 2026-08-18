@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useScrolled } from "../hooks/useScrolled";
+import { idToPath, navigateToSection } from "../lib/sectionPaths";
 import "./ScrollNav.css";
 
 const SECTIONS = [
-  { href: "#top", label: "top" },
-  { href: "#about", label: "about" },
-  { href: "#stack", label: "stack" },
-  { href: "#experience", label: "experience" },
-  { href: "#projects", label: "projects" },
-  { href: "#contact", label: "contact" },
+  { id: "top", label: "top" },
+  { id: "about", label: "about" },
+  { id: "stack", label: "stack" },
+  { id: "experience", label: "experience" },
+  { id: "projects", label: "projects" },
+  { id: "contact", label: "contact" },
 ];
 
 export default function ScrollNav() {
@@ -44,11 +45,14 @@ export default function ScrollNav() {
         <div className="scroll-nav__menu" role="menu">
           {SECTIONS.map((item) => (
             <a
-              key={item.href}
-              href={item.href}
+              key={item.id}
+              href={idToPath(item.id)}
               role="menuitem"
               className="scroll-nav__bubble"
-              onClick={() => setOpen(false)}
+              onClick={(event) => {
+                navigateToSection(item.id)(event);
+                setOpen(false);
+              }}
             >
               {item.label}
             </a>

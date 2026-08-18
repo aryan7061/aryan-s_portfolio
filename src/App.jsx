@@ -10,11 +10,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollNav from "./components/ScrollNav";
 import { useActiveSection } from "./hooks/useActiveSection";
+import { useScrollBlurPause } from "./hooks/useScrollBlurPause";
 
 const NAV_SECTION_IDS = ["about", "stack", "experience", "projects", "contact"];
 
 export default function App() {
   useActiveSection(NAV_SECTION_IDS);
+  useScrollBlurPause();
 
   return (
     <div className="page" id="top">

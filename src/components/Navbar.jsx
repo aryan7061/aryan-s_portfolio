@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { profile } from "../data/portfolio";
 import { useTheme } from "../hooks/useTheme";
+import { idToPath, navigateToSection } from "../lib/sectionPaths";
 import ThemeToggle from "./ThemeToggle";
 import agMarkLight from "../assets/brand/ag-mark-light.png";
 import "./Navbar.css";
 
 const NAV_ITEMS = [
-  { href: "#about", label: "about" },
-  { href: "#stack", label: "stack" },
-  { href: "#experience", label: "experience" },
-  { href: "#projects", label: "projects" },
-  { href: "#contact", label: "contact" },
+  { id: "about", label: "about" },
+  { id: "stack", label: "stack" },
+  { id: "experience", label: "experience" },
+  { id: "projects", label: "projects" },
+  { id: "contact", label: "contact" },
 ];
 
 export default function Navbar() {
@@ -19,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="#top" className="navbar__brand">
+      <a href="/" className="navbar__brand" onClick={navigateToSection("top")}>
         <img
           src={agMarkLight}
           alt=""
@@ -45,7 +46,14 @@ export default function Navbar() {
 
         <div id="navLinks" className={`navbar__links ${open ? "is-open" : ""}`}>
           {NAV_ITEMS.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <a
+              key={item.id}
+              href={idToPath(item.id)}
+              onClick={(event) => {
+                navigateToSection(item.id)(event);
+                setOpen(false);
+              }}
+            >
               {item.label}
             </a>
           ))}

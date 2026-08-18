@@ -7,8 +7,8 @@
   justify-content: space-between;
   padding: 14px var(--section-pad-x);
   background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: var(--nav-blur);
+  -webkit-backdrop-filter: var(--nav-blur);
   border-bottom: 1px solid var(--line);
 }
 
@@ -102,8 +102,8 @@
     align-items: stretch;
     gap: 0;
     background: var(--nav-links-bg);
-    -webkit-backdrop-filter: blur(28px) saturate(180%);
-    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: var(--nav-links-blur);
+    backdrop-filter: var(--nav-links-blur);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     border-bottom: 1px solid var(--glass-border);
     display: none;

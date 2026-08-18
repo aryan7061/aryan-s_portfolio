@@ -1,9 +1,24 @@
 import { useEffect } from "react";
+import { idToPath, pathToId, scrollToId } from "../lib/sectionPaths";
 
-// Keeps the address bar's hash in sync with whichever section is currently
-// in view — clicking a nav link already updates the URL natively, but
-// scrolling past a section with no click never did.
+// Keeps the address bar's path in sync with whichever section is currently
+// in view, and restores scroll position on load/back-forward — all without
+// pulling in a router, since this is a single scrolling page.
 export function useActiveSection(ids) {
+  useEffect(() => {
+    const initialId = pathToId(window.location.pathname);
+    if (initialId !== "top" && document.getElementById(initialId)) {
+      // Wait a frame so fonts/images have settled before jumping, avoiding
+      // a layout-shift-induced mis-scroll on load.
+      requestAnimationFrame(() => scrollToId(initialId));
+    }
+
+    const onPopState = () =>
+      scrollToId(pathToId(window.location.pathname), "smooth");
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
   useEffect(() => {
     const sections = ids
       .map((id) => document.getElementById(id))
@@ -16,9 +31,9 @@ export function useActiveSection(ids) {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (!mostVisible) return;
-        const hash = `#${mostVisible.target.id}`;
-        if (window.location.hash !== hash) {
-          window.history.replaceState(null, "", hash);
+        const path = idToPath(mostVisible.target.id);
+        if (window.location.pathname !== path) {
+          window.history.replaceState(null, "", path);
         }
       },
       // Treat a thin band near vertical center as "active", rather than any intersection at all
@@ -28,14 +43,4 @@ export function useActiveSection(ids) {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, [ids]);
-
-  // On load/reload with a hash already in the URL, the browser can jump before
-  // fonts and images finish shifting layout — re-settle it one frame later.
-  useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (!hash) return;
-    requestAnimationFrame(() => {
-      document.getElementById(hash)?.scrollIntoView();
-    });
-  }, []);
 }

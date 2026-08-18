@@ -30,6 +30,9 @@
   --glass-bg: rgba(13, 26, 22, 0.55);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: blur(14px) saturate(160%);
+  --nav-blur: blur(16px);
+  --nav-links-blur: blur(28px) saturate(180%);
+  --marquee-blur: blur(8px);
 
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --serif: "Fraunces", Georgia, serif;
@@ -73,6 +76,16 @@ html[data-theme="light"] {
   --glass-border: rgba(8, 39, 28, 0.08);
 }
 
+/* backdrop-filter is expensive to recompute every scroll frame — drop it
+   for the duration of an active scroll gesture (see useScrollBlurPause)
+   and let it snap back once movement settles */
+html.is-scrolling {
+  --glass-blur: none;
+  --nav-blur: none;
+  --nav-links-blur: none;
+  --marquee-blur: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -81,7 +94,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* keeps section headings clear of the sticky navbar when landing via #hash */
+/* keeps section headings clear of the sticky navbar when landing directly on a section path */
 #about,
 #stack,
 #experience,

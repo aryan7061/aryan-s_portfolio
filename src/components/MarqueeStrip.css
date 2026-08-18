@@ -6,8 +6,8 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--strip-bg);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: var(--marquee-blur);
+  backdrop-filter: var(--marquee-blur);
 }
 
 .marquee-track {

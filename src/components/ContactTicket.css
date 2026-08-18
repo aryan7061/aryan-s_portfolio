@@ -34,14 +34,11 @@
     drop-shadow(0 10px 9px #00000025) drop-shadow(0 20px 20px #00000025)
     drop-shadow(0 40px 40px #00000025);
   animation: ticket-hover 3s ease infinite;
-  will-change: transform, filter;
+  will-change: transform;
 }
 
 @keyframes ticket-hover {
   50% {
-    filter: drop-shadow(0 4px 3px #00000015) drop-shadow(0 6px 6px #00000015)
-      drop-shadow(0 16px 14px #00000015) drop-shadow(0 30px 28px #00000015)
-      drop-shadow(0 60px 60px #00000015);
     transform: translateY(-7px) scale(1.02);
   }
 }
@@ -134,7 +131,10 @@
 .ticket-holographic::after {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: -100%;
+  height: 300%;
   border-radius: inherit;
   background: linear-gradient(
     to bottom,
@@ -143,17 +143,16 @@
     var(--panel-hover),
     rgba(var(--accent-rgb), 0.3)
   );
+  background-repeat: repeat-y;
   mix-blend-mode: difference;
 
   animation: ticket-bg-pos 3s ease-in-out infinite alternate;
-  background-position: 0 0;
-  background-size: 100% 300%;
-  background-repeat: repeat;
+  will-change: transform;
 }
 
 @keyframes ticket-bg-pos {
   to {
-    background-position: 0 500px;
+    transform: translateY(15%);
   }
 }
 
