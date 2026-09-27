@@ -37,7 +37,5 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation: none;
-    flex-wrap: wrap;
-    width: auto;
   }
 }

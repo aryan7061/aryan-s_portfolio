@@ -51,17 +51,6 @@
   color: var(--accent);
 }
 
-.navbar__cta {
-  color: var(--accent) !important;
-  border: 1px solid var(--accent);
-  border-radius: 2px;
-  padding: 6px 16px;
-}
-
-.navbar__cta:hover {
-  background: var(--accent-soft);
-}
-
 .navbar__toggle {
   display: none;
   background: none;
@@ -116,10 +105,5 @@
   .navbar__links a {
     padding: 14px 20px;
     border-bottom: 1px solid var(--line);
-  }
-
-  .navbar__cta {
-    border: none !important;
-    border-radius: 0;
   }
 }

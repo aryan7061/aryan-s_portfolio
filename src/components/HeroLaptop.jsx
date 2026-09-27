@@ -1,10 +1,6 @@
-import { heroLines } from "../data/portfolio";
-import { useTypewriter } from "../hooks/useTypewriter";
 import "./HeroLaptop.css";
 
 export default function HeroLaptop() {
-  const typed = useTypewriter(heroLines);
-
   return (
     <div className="hero-laptop-slot" aria-hidden="true">
       <div className="laptop-loader">
@@ -22,27 +18,18 @@ export default function HeroLaptop() {
           <div className="lp-laptop">
             <div className="lp-screen">
               <div className="lp-bezel">
-                <div className="lp-display lp-display--terminal">
+                <div className="lp-display lp-display--headline">
                   <div className="lp-cam" />
-                  <div className="lp-termbar">
-                    <span
-                      className="lp-termdot"
-                      style={{ background: "#ff5f57" }}
-                    />
-                    <span
-                      className="lp-termdot"
-                      style={{ background: "#febc2e" }}
-                    />
-                    <span
-                      className="lp-termdot"
-                      style={{ background: "#28c840" }}
-                    />
-                    <span className="lp-termpath">~/aryan — zsh</span>
+                  <div className="lp-headline">
+                    <p className="lp-headline__kicker">hello world</p>
+                    <p className="lp-headline__statement">
+                      I design <span className="lp-headline__amp">&amp;</span>{" "}
+                      craft beautiful websites for users, that solves your{" "}
+                      <span className="lp-headline__accent">
+                        business tasks
+                      </span>
+                    </p>
                   </div>
-                  <pre className="lp-termbody">
-                    {typed}
-                    <span className="lp-termcaret">_</span>
-                  </pre>
                 </div>
               </div>
               <div className="lp-hinge" />

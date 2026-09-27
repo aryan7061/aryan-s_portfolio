@@ -28,8 +28,6 @@ import chromeIcon from "devicon/icons/chrome/chrome-original.svg";
 import typeormIcon from "../assets/icons/typeorm.svg";
 import { siRender } from "simple-icons";
 
-// devicon has no Render logo; build one from simple-icons' path + brand hex
-// instead of relying on its .svg string, so the color is explicit either way.
 const renderIcon = `data:image/svg+xml,${encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#${siRender.hex}"><path d="${siRender.path}"/></svg>`,
 )}`;
@@ -48,8 +46,11 @@ export const profile = {
   linkedinUrl: "https://www.linkedin.com/in/aryan-gupta-2026bvf",
   linkedinHandle: "aryan-gupta-2026bvf",
   resumeUrl: "/Aryan-Gupta-Resume.pdf",
-  status: "Open to Web Developer roles",
+  status: "React Developer · Frontend Developer · Fullstack Developer",
   stackLine: "React.js · JavaScript · TypeScript",
+  introRoles: "React Developer · Frontend Developer · Fullstack Developer",
+  introLede:
+    "Hello, I am a Developer with around 1 year of experience designing and developing web applications.",
   summary:
     "Developer experienced in building React applications on the frontend and MERN, NestJS/GraphQL services on the backend, backed by PostgreSQL and MySQL/MongoDB. Comfortable working across the entire stack — from responsive UIs and Redux state management, to designing GraphQL APIs, structuring relational databases, and enforcing server-side authorization. Has independently built and deployed a production-style full-stack application end to end, and also works professionally alongside backend teams to ship functional web apps.",
 };
@@ -66,10 +67,10 @@ export const heroLines = [
 ];
 
 export const facts = [
-  { label: "Current employer", value: "Tricity Services", serif: true },
-  { label: "Joined", value: "Dec 2025" },
-  { label: "Primary framework", value: "React.js" },
-  { label: "Education", value: "MCA · BCA" },
+  { label: "Current Role", value: "Frontend Developer", serif: true },
+  { label: "Experience", value: "Dec 2025 - Present" },
+  { label: "Frontend", value: "React.js · JavaScript · TypeScript · Redux" },
+  { label: "Backend", value: "Node.js · NextJS · GraphQL · PostgreSQL" },
 ];
 
 export const highlights = [

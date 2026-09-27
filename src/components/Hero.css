@@ -18,12 +18,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
+  margin: 20px 0 24px;
   padding: 6px 12px;
   border-radius: 999px;
   background: var(--accent-soft);
   border: 1px solid var(--accent-line);
-  animation: fadeSlideUp 0.7s ease both;
+  animation: fadeSlideUp 0.7s ease 0.1s both;
 }
 
 .status-dot {
@@ -49,34 +49,7 @@
   color: var(--text);
   letter-spacing: -0.03em;
   margin: 0;
-  animation: fadeSlideUp 0.7s ease 0.1s both;
-}
-
-.hero__role-line {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 16px 0 24px;
-  flex-wrap: wrap;
-  animation: fadeSlideUp 0.7s ease 0.18s both;
-}
-
-.hero__role {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--text-soft);
-  font-weight: 500;
-}
-
-.hero__stack {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.hero__dot {
-  color: var(--line);
-  font-size: 1.2rem;
-  margin-right: 12px;
+  animation: fadeSlideUp 0.7s ease both;
 }
 
 .hero__lede {

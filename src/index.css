@@ -25,14 +25,17 @@
   --nav-bg: rgba(8, 15, 13, 0.88);
   --nav-links-bg: rgba(8, 15, 13, 0.94);
   --card-shadow: none;
-
-  /* glassmorphism surface — translucent panel + blur, same panel color as --panel */
+  --ticket-base: #030c09;
+  --ticket-mid: #0c2a21;
+  --ticket-glow: #2dd4a7;
+  --ticket-hot: #6cf5cd;
+  --ticket-deep: #010604;
   --glass-bg: rgba(13, 26, 22, 0.55);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: blur(14px) saturate(160%);
-  --nav-blur: blur(16px);
-  --nav-links-blur: blur(28px) saturate(180%);
-  --marquee-blur: blur(8px);
+  --glass-blur: blur(8px) saturate(160%);
+  --nav-blur: blur(10px);
+  --nav-links-blur: blur(16px) saturate(180%);
+  --marquee-blur: blur(6px);
 
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --serif: "Fraunces", Georgia, serif;
@@ -72,18 +75,15 @@ html[data-theme="light"] {
   --nav-links-bg: rgba(229, 254, 242, 0.95);
   --card-shadow: 0 2px 10px rgba(8, 39, 28, 0.06);
 
+  /* mapped to the surface palette so the light ticket renders exactly as before */
+  --ticket-base: var(--panel);
+  --ticket-mid: var(--panel-hover);
+  --ticket-glow: var(--accent);
+  --ticket-hot: var(--accent-bright);
+  --ticket-deep: var(--bg);
+
   --glass-bg: rgba(244, 255, 250, 0.6);
   --glass-border: rgba(8, 39, 28, 0.08);
-}
-
-/* backdrop-filter is expensive to recompute every scroll frame — drop it
-   for the duration of an active scroll gesture (see useScrollBlurPause)
-   and let it snap back once movement settles */
-html.is-scrolling {
-  --glass-blur: none;
-  --nav-blur: none;
-  --nav-links-blur: none;
-  --marquee-blur: none;
 }
 
 * {
@@ -209,8 +209,7 @@ button:focus-visible {
 .page {
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow-x: clip;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);

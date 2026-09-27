@@ -1,7 +1,3 @@
-// Shared helpers for path-based section navigation (no router needed for
-// a single scrolling page — just keep the URL's path in sync with scroll
-// position and handle clicks/back-forward without a full reload).
-
 export function idToPath(id) {
   return id === "top" ? "/" : `/${id}`;
 }
@@ -16,9 +12,6 @@ export function scrollToId(id, behavior = "auto") {
   if (el) el.scrollIntoView({ behavior });
 }
 
-// Returns a click handler that scrolls to the section and updates the URL
-// path, while still letting modifier-key clicks (open in new tab, middle
-// click, etc.) fall through to the anchor's real href.
 export function navigateToSection(id) {
   return (event) => {
     if (

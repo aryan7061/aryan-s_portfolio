@@ -11,8 +11,6 @@
   position: relative;
   width: 26em;
   height: 24em;
-  /* the whole mockup scales from this base — clamp keeps it fitting the
-     hero column at any viewport instead of overflowing on small screens */
   font-size: clamp(9px, 2.4vw, 14px);
   max-width: 100%;
 }
@@ -226,60 +224,77 @@
     0 0 0.25em rgba(var(--accent-rgb), 0.4);
 }
 
-.lp-display--terminal {
+.lp-display--headline {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 0.9em 1em;
   background: linear-gradient(150deg, #0d1a16 0%, #0a1512 50%, #081310 100%);
 }
 
-.lp-termbar {
-  display: flex;
-  align-items: center;
-  gap: 0.35em;
-  padding: 0.4em 0.5em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  flex: none;
+.lp-display--headline::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -15%;
+  width: 65%;
+  height: 160%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb), 0.4) 0%,
+    transparent 70%
+  );
+  filter: blur(1.3em);
+  pointer-events: none;
+  animation: lp-headline-glow 8s ease-in-out infinite;
 }
 
-.lp-termdot {
-  width: 0.5em;
-  height: 0.5em;
-  border-radius: 50%;
-}
-
-.lp-termpath {
-  font-family: var(--mono);
-  font-size: 0.5em;
-  color: #6fa98a;
-  margin-left: 0.3em;
-}
-
-.lp-termbody {
-  flex: 1;
-  margin: 0;
-  padding: 0.55em 0.6em;
-  font-family: var(--mono);
-  font-size: 0.56em;
-  line-height: 1.7;
-  color: #9fd9c0;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow: hidden;
-}
-
-.lp-termcaret {
-  color: var(--accent-bright);
-  animation: lp-blink 1.1s step-end infinite;
-}
-
-@keyframes lp-blink {
+@keyframes lp-headline-glow {
   0%,
   100% {
-    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    opacity: 0.45;
   }
   50% {
-    opacity: 0;
+    transform: translate(65%, 15%) scale(1.2);
+    opacity: 0.85;
   }
+}
+
+.lp-headline {
+  position: relative;
+  width: 100%;
+}
+
+.lp-headline__kicker {
+  margin: 0 0 0.4em;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #eef6f1;
+  letter-spacing: -0.01em;
+}
+
+.lp-headline__statement {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.82em;
+  line-height: 1.45;
+  color: #eef6f1;
+  letter-spacing: -0.01em;
+}
+
+.lp-headline__amp {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent-bright);
+}
+
+.lp-headline__accent {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent-bright);
 }
 
 .lp-hinge {

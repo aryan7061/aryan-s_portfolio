@@ -1,26 +1,20 @@
-import { useEffect, useState } from "react";
-
-export function useScrolled(threshold = 240) {
-  const [scrolled, setScrolled] = useState(false);
+import { useEffect, useRef, useState } from "react";
+export function useScrolledPast() {
+  const sentinelRef = useRef(null);
+  const [passed, setPassed] = useState(false);
 
   useEffect(() => {
-    let ticking = false;
+    const node = sentinelRef.current;
+    if (!node) return undefined;
 
-    const checkScroll = () => {
-      setScrolled(window.scrollY > threshold);
-      ticking = false;
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => setPassed(!entry.isIntersecting),
+      { threshold: 0 },
+    );
 
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(checkScroll);
-    };
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    checkScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [threshold]);
-
-  return scrolled;
+  return [sentinelRef, passed];
 }

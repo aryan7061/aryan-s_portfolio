@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-// Flips to true once the element scrolls into view, then disconnects
-// used for one-time fade/slide-in reveal animations.
 export function useScrollReveal(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

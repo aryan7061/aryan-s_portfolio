@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { profile } from "../data/portfolio";
 import { useTheme } from "../hooks/useTheme";
 import { idToPath, navigateToSection } from "../lib/sectionPaths";
 import ThemeToggle from "./ThemeToggle";
@@ -57,15 +56,6 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a
-            className="navbar__cta"
-            href={profile.emailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-          >
-            hire_me
-          </a>
         </div>
       </div>
     </nav>

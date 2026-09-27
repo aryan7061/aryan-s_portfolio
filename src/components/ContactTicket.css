@@ -30,23 +30,17 @@
   user-select: none;
   overflow: hidden;
 
-  filter: drop-shadow(0 2px 1px #00000025) drop-shadow(0 4px 3px #00000025)
-    drop-shadow(0 10px 9px #00000025) drop-shadow(0 20px 20px #00000025)
-    drop-shadow(0 40px 40px #00000025);
-  animation: ticket-hover 3s ease infinite;
-  will-change: transform;
+  filter: drop-shadow(0 4px 3px #00000025) drop-shadow(0 20px 20px #00000025);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-@keyframes ticket-hover {
-  50% {
-    transform: translateY(-7px) scale(1.02);
-  }
+.ticket-card:hover,
+.ticket-card:focus-within {
+  transform: translateY(-7px) scale(1.02);
 }
 
 .ticket-bg {
   position: absolute;
   inset: 0;
-  border-radius: inherit;
   background-color: #fff;
   mask:
     /* top perforations */
@@ -95,36 +89,35 @@
 
 .ticket-holographic {
   background-image:
-    linear-gradient(to bottom, var(--panel), 90%, var(--bg)),
+    linear-gradient(to bottom, var(--ticket-base), 90%, var(--ticket-deep)),
     conic-gradient(
       at 60% 50%,
-      var(--panel),
-      var(--accent),
-      var(--accent-bright),
-      var(--panel-hover),
-      var(--accent),
-      var(--panel),
-      var(--accent),
-      var(--accent-bright),
-      var(--bg),
-      var(--accent),
-      var(--panel-hover),
-      var(--accent-bright),
-      var(--panel)
+      var(--ticket-base),
+      var(--ticket-glow),
+      var(--ticket-hot),
+      var(--ticket-mid),
+      var(--ticket-glow),
+      var(--ticket-base),
+      var(--ticket-glow),
+      var(--ticket-hot),
+      var(--ticket-deep),
+      var(--ticket-glow),
+      var(--ticket-mid),
+      var(--ticket-hot),
+      var(--ticket-base)
     );
 }
 .ticket-holographic::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: inherit;
   background:
-    radial-gradient(circle at 70% 20%, var(--accent-bright), #0000),
+    radial-gradient(circle at 70% 20%, var(--ticket-hot), #0000),
     repeating-radial-gradient(
       circle at 30% 80%,
-      var(--panel),
-      var(--accent) 48px,
-      var(--panel-hover) 150px
+      var(--ticket-base),
+      var(--ticket-glow) 48px,
+      var(--ticket-mid) 150px
     );
   mix-blend-mode: color-burn;
 }
@@ -135,25 +128,20 @@
   right: 0;
   top: -100%;
   height: 300%;
-  border-radius: inherit;
   background: linear-gradient(
     to bottom,
     rgba(var(--accent-rgb), 0.3),
-    var(--bg),
-    var(--panel-hover),
+    var(--ticket-deep),
+    var(--ticket-mid),
     rgba(var(--accent-rgb), 0.3)
   );
-  background-repeat: repeat-y;
   mix-blend-mode: difference;
-
-  animation: ticket-bg-pos 3s ease-in-out infinite alternate;
-  will-change: transform;
+  transition: transform 0.5s ease-in-out;
 }
 
-@keyframes ticket-bg-pos {
-  to {
-    transform: translateY(15%);
-  }
+.ticket-card:hover .ticket-holographic::after,
+.ticket-card:focus-within .ticket-holographic::after {
+  transform: translateY(15%);
 }
 
 .ticket-header {
@@ -290,6 +278,16 @@
 @media (prefers-reduced-motion: reduce) {
   .ticket-card,
   .ticket-holographic::after {
-    animation: none !important;
+    transition: none;
+  }
+
+  .ticket-card:hover,
+  .ticket-card:focus-within {
+    transform: none;
+  }
+
+  .ticket-card:hover .ticket-holographic::after,
+  .ticket-card:focus-within .ticket-holographic::after {
+    transform: none;
   }
 }

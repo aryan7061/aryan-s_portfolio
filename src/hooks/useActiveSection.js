@@ -1,15 +1,10 @@
 import { useEffect } from "react";
 import { idToPath, pathToId, scrollToId } from "../lib/sectionPaths";
 
-// Keeps the address bar's path in sync with whichever section is currently
-// in view, and restores scroll position on load/back-forward — all without
-// pulling in a router, since this is a single scrolling page.
 export function useActiveSection(ids) {
   useEffect(() => {
     const initialId = pathToId(window.location.pathname);
     if (initialId !== "top" && document.getElementById(initialId)) {
-      // Wait a frame so fonts/images have settled before jumping, avoiding
-      // a layout-shift-induced mis-scroll on load.
       requestAnimationFrame(() => scrollToId(initialId));
     }
 
@@ -36,7 +31,6 @@ export function useActiveSection(ids) {
           window.history.replaceState(null, "", path);
         }
       },
-      // Treat a thin band near vertical center as "active", rather than any intersection at all
       { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
     );
 

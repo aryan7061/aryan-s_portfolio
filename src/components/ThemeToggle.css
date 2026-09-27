@@ -142,6 +142,7 @@
   animation-name: cloud-move;
   animation-duration: 6s;
   animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
 .cloud-dark {
@@ -153,11 +154,13 @@
   animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-delay: 1s;
+  animation-play-state: paused;
 }
 
 #theme-switch-input:checked + .slider .cloud-light,
 #theme-switch-input:checked + .slider .cloud-dark {
   opacity: 0;
+  animation-play-state: paused;
 }
 
 #cloud-1 {
@@ -224,6 +227,18 @@
   animation-name: star-twinkle;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+.switch:hover #theme-switch-input:not(:checked) + .slider .cloud-light,
+.switch:hover #theme-switch-input:not(:checked) + .slider .cloud-dark,
+.switch:focus-within #theme-switch-input:not(:checked) + .slider .cloud-light,
+.switch:focus-within #theme-switch-input:not(:checked) + .slider .cloud-dark {
+  animation-play-state: running;
+}
+
+.switch:hover #theme-switch-input:checked + .slider .star,
+.switch:focus-within #theme-switch-input:checked + .slider .star {
+  animation-play-state: running;
 }
 
 #theme-switch-input:checked + .slider .stars {

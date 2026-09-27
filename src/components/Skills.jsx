@@ -42,7 +42,6 @@ export default function Skills() {
                 loading="lazy"
               />
             ) : (
-              // no real logo exists for this tool — accent glyph stand-in, see Phase 1 data notes
               <span className="skill__glyph" aria-hidden="true">
                 ◆
               </span>
