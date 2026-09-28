@@ -1,5 +1,6 @@
 import { profile } from "../data/portfolio";
 import ContactTicket from "./ContactTicket";
+import EmailButton from "./EmailButton";
 import "./Contact.css";
 
 export default function Contact() {
@@ -18,14 +19,7 @@ export default function Contact() {
             applications.
           </p>
           <div className="btn-row" style={{ animation: "none" }}>
-            <a
-              className="btn btn--solid"
-              href={profile.emailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              send_message
-            </a>
+            <EmailButton className="btn btn--solid">send_message</EmailButton>
             <a
               className="btn btn--ghost"
               href={profile.linkedinUrl}

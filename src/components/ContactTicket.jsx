@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolio";
+import EmailButton from "./EmailButton";
 import "./ContactTicket.css";
 
 export default function ContactTicket() {
@@ -19,13 +20,9 @@ export default function ContactTicket() {
             <div>
               <dt>Email</dt>
               <dd>
-                <a
-                  href={profile.emailUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <EmailButton className="link-button">
                   {profile.email}
-                </a>
+                </EmailButton>
               </dd>
             </div>
             <div>

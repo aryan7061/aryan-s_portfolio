@@ -21,13 +21,15 @@ footer span {
   gap: 24px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links button {
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
   letter-spacing: 0.06em;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links button:hover {
   color: var(--accent);
 }

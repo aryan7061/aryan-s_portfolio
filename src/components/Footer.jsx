@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolio";
+import EmailButton from "./EmailButton";
 import "./Footer.css";
 
 export default function Footer() {
@@ -16,9 +17,7 @@ export default function Footer() {
         <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer">
           linkedin
         </a>
-        <a href={profile.emailUrl} target="_blank" rel="noopener noreferrer">
-          email
-        </a>
+        <EmailButton className="link-button">email</EmailButton>
       </div>
     </footer>
   );

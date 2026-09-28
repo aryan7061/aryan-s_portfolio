@@ -58,7 +58,6 @@ html[data-theme="light"] {
   --accent-bright: #174c3a;
   --text: #08271c;
   --text-soft: #174c3a;
-  --muted: #389c7a;
   --muted: #2b7a5f;
 
   --selection-bg: rgba(40, 116, 90, 0.25);
@@ -135,6 +134,26 @@ a:hover {
 
 button {
   font-family: inherit;
+}
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 ::selection {

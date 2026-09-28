@@ -40,8 +40,6 @@ export const profile = {
   name: "Aryan Gupta",
   role: "Full Stack Developer",
   email: "aryanguptawork26@gmail.com",
-  emailUrl:
-    "https://mail.google.com/mail/?view=cm&fs=1&to=aryanguptawork26@gmail.com",
   phone: "+91 7367993351",
   phoneUrl: "tel:+917367993351",
   githubUrl: "https://github.com/aryan7061",

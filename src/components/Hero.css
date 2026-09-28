@@ -78,6 +78,8 @@
 }
 
 .btn--solid {
+  border: 0;
+  cursor: pointer;
   background: var(--accent);
   color: var(--bg) !important;
 }

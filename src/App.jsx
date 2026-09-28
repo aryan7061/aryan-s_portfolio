@@ -9,6 +9,7 @@ import Quote from "./components/Quote";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollNav from "./components/ScrollNav";
+import EmailOptions from "./components/EmailOptions";
 import { useActiveSection } from "./hooks/useActiveSection";
 
 const NAV_SECTION_IDS = [
@@ -44,6 +45,7 @@ export default function App() {
       <Contact />
       <Footer />
       <ScrollNav />
+      <EmailOptions />
     </div>
   );
 }

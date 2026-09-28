@@ -230,11 +230,13 @@
   overflow-wrap: break-word;
 }
 
-.ticket-details dd a {
+.ticket-details dd a,
+.ticket-details dd button {
   color: inherit;
 }
 
-.ticket-details dd a:hover {
+.ticket-details dd a:hover,
+.ticket-details dd button:hover {
   text-decoration: underline;
 }
 
