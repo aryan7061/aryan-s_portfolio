@@ -34,7 +34,11 @@ export default function Contact() {
             >
               connect_on_linkedin
             </a>
-            <a className="btn btn--ghost" href={profile.resumeUrl} download>
+            <a
+              className="btn btn--ghost"
+              href={profile.resumeUrl}
+              download={profile.resumeFileName}
+            >
               download_resume
             </a>
           </div>

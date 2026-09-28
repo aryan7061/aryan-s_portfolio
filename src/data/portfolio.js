@@ -34,7 +34,7 @@ const renderIcon = `data:image/svg+xml,${encodeURIComponent(
 
 export const profile = {
   name: "Aryan Gupta",
-  role: "Web Developer",
+  role: "Frontend Developer",
   company: "Tricity Services",
   companyStart: "December 2025",
   email: "aryanguptawork26@gmail.com",
@@ -45,16 +45,16 @@ export const profile = {
   githubHandle: "aryan7061",
   linkedinUrl: "https://www.linkedin.com/in/aryan-gupta-2026bvf",
   linkedinHandle: "aryan-gupta-2026bvf",
-  resumeUrl: "/Aryan-Gupta-Resume.pdf",
+  resumeUrl: "/aryan-gupta-resume.pdf",
+  resumeFileName: "Aryan-Gupta-Resume.pdf",
   status: "React Developer · Frontend Developer · Fullstack Developer",
-  stackLine: "React.js · JavaScript · TypeScript",
+  stackLine: "MERN · JavaScript · TypeScript",
   introRoles: "React Developer · Frontend Developer · Fullstack Developer",
   introLede:
     "Hello, I am a Developer with around 1 year of experience designing and developing web applications.",
   summary:
     "Developer experienced in building React applications on the frontend and MERN, NestJS/GraphQL services on the backend, backed by PostgreSQL and MySQL/MongoDB. Comfortable working across the entire stack — from responsive UIs and Redux state management, to designing GraphQL APIs, structuring relational databases, and enforcing server-side authorization. Has independently built and deployed a production-style full-stack application end to end, and also works professionally alongside backend teams to ship functional web apps.",
 };
-
 export const heroLines = [
   "$ whoami",
   "  Aryan Gupta",

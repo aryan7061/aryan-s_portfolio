@@ -19,7 +19,11 @@ export default function Hero() {
           <p className="hero__lede">{profile.introLede}</p>
 
           <div className="btn-row">
-            <a className="btn btn--solid" href={profile.resumeUrl} download>
+            <a
+              className="btn btn--solid"
+              href={profile.resumeUrl}
+              download={profile.resumeFileName}
+            >
               download_resume
             </a>
           </div>
