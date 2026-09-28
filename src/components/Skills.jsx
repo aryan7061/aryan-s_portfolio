@@ -25,7 +25,7 @@ export default function Skills() {
 
   return (
     <section id="stack" className="wrap">
-      <SectionHeading eyebrow="02 — Tech Stack" title="Tools I build with" />
+      <SectionHeading sectionId="stack" title="Tools I build with" />
 
       <div className="tabs" role="tablist" aria-label="Skill categories">
         {skillGroups.map((group, index) => (

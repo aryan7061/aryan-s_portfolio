@@ -23,7 +23,7 @@ export default function HeroLaptop() {
                   <div className="lp-headline">
                     <p className="lp-headline__kicker">hello world!</p>
                     <p className="lp-headline__statement">
-                      <span className="lp-headline__accent">Curiuos</span> by
+                      <span className="lp-headline__accent">Curious</span> by
                       nature. &nbsp;
                       <span className="lp-headline__accent">Developer</span> by
                       craft.

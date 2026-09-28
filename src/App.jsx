@@ -11,18 +11,10 @@ import Footer from "./components/Footer";
 import ScrollNav from "./components/ScrollNav";
 import EmailOptions from "./components/EmailOptions";
 import { useActiveSection } from "./hooks/useActiveSection";
-
-const NAV_SECTION_IDS = [
-  "top",
-  "about",
-  "stack",
-  "experience",
-  "projects",
-  "contact",
-];
+import { SECTION_IDS } from "./lib/sections";
 
 export default function App() {
-  useActiveSection(NAV_SECTION_IDS);
+  useActiveSection(SECTION_IDS);
 
   return (
     <div className="page">

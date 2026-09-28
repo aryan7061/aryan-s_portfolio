@@ -5,7 +5,7 @@ import "./Experience.css";
 export default function Experience() {
   return (
     <section id="experience" className="wrap">
-      <SectionHeading eyebrow="03 — Experience" title="Where I've worked" />
+      <SectionHeading sectionId="experience" title="Where I've worked" />
 
       <div className="timeline">
         {experience.map((job) => (

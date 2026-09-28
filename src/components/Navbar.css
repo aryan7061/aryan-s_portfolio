@@ -22,6 +22,10 @@
   letter-spacing: 0.06em;
 }
 
+.navbar__brand:hover {
+  color: var(--accent-bright);
+}
+
 .navbar__brand-mark {
   border-radius: 50%;
   background: #e5fef2;

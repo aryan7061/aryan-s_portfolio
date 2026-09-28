@@ -1,3 +1,7 @@
+.contact__eyebrow {
+  margin-bottom: 16px;
+}
+
 .contact {
   display: flex;
   flex-wrap: wrap;

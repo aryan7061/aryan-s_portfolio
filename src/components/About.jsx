@@ -8,7 +8,7 @@ export default function About() {
 
   return (
     <section id="about" className="wrap">
-      <SectionHeading eyebrow="01 — About" title="What I bring" />
+      <SectionHeading sectionId="about" title="What I bring" />
 
       <p className="about__summary">{profile.summary}</p>
 

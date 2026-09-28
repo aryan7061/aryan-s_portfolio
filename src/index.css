@@ -94,11 +94,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#about,
-#stack,
-#experience,
-#projects,
-#contact {
+section[id] {
   scroll-margin-top: 80px;
 }
 
@@ -119,7 +115,7 @@ img {
   max-width: 100%;
 }
 
-a {
+:where(a) {
   color: var(--accent);
   text-decoration: none;
   transition:
@@ -128,7 +124,7 @@ a {
     background 0.2s ease;
 }
 
-a:hover {
+:where(a):hover {
   color: var(--accent-bright);
 }
 

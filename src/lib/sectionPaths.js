@@ -18,20 +18,18 @@ export function scrollToId(id, behavior = "instant") {
   if (el) el.scrollIntoView({ behavior });
 }
 
-export function navigateToSection(id) {
-  return (event) => {
-    if (
-      event.defaultPrevented ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey
-    ) {
-      return;
-    }
-    event.preventDefault();
-    scrollToId(id, "smooth");
-    window.history.pushState(null, "", idToPath(id));
-  };
+export function handleSectionClick(event, id) {
+  if (
+    event.defaultPrevented ||
+    event.button !== 0 ||
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey
+  ) {
+    return;
+  }
+  event.preventDefault();
+  scrollToId(id, "smooth");
+  window.history.pushState(null, "", idToPath(id));
 }

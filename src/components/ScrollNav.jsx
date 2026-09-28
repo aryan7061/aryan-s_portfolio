@@ -1,18 +1,10 @@
 import { useCallback, useRef, useState } from "react";
-import { useScrolledPast } from "../hooks/useScrolled";
+import { useScrolledPast } from "../hooks/useScrolledPast";
 import { useNearFooter } from "../hooks/useNearFooter";
 import { useDismiss } from "../hooks/useDismiss";
-import { idToPath, navigateToSection } from "../lib/sectionPaths";
+import { handleSectionClick, idToPath } from "../lib/sectionPaths";
+import { SECTIONS } from "../lib/sections";
 import "./ScrollNav.css";
-
-const SECTIONS = [
-  { id: "top", label: "top" },
-  { id: "about", label: "about" },
-  { id: "stack", label: "stack" },
-  { id: "experience", label: "experience" },
-  { id: "projects", label: "projects" },
-  { id: "contact", label: "contact" },
-];
 
 export default function ScrollNav() {
   const [sentinelRef, scrolledPast] = useScrolledPast();
@@ -71,7 +63,7 @@ export default function ScrollNav() {
                 href={idToPath(item.id)}
                 className="scroll-nav__bubble"
                 onClick={(event) => {
-                  navigateToSection(item.id)(event);
+                  handleSectionClick(event, item.id);
                   setOpen(false);
                 }}
               >

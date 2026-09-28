@@ -66,6 +66,9 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
+}
+
+.hero__main .btn-row {
   animation: fadeSlideUp 0.7s ease 0.34s both;
 }
 
@@ -81,7 +84,7 @@
   border: 0;
   cursor: pointer;
   background: var(--accent);
-  color: var(--bg) !important;
+  color: var(--bg);
 }
 
 .btn--solid:hover {
@@ -90,12 +93,12 @@
 
 .btn--ghost {
   border: 1px solid var(--line);
-  color: var(--muted) !important;
+  color: var(--muted);
 }
 
 .btn--ghost:hover {
   border-color: var(--accent);
-  color: var(--accent) !important;
+  color: var(--accent);
   background: var(--accent-wash);
 }
 

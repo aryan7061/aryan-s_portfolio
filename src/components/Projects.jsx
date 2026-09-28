@@ -6,7 +6,7 @@ import "./Projects.css";
 export default function Projects() {
   return (
     <section id="projects" className="wrap">
-      <SectionHeading eyebrow="04 — Projects" title="Selected work" />
+      <SectionHeading sectionId="projects" title="Selected work" />
 
       <div className="projects-list">
         {projects.map((project) => (

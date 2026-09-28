@@ -1,6 +1,7 @@
 import { profile } from "../data/portfolio";
 import ContactTicket from "./ContactTicket";
 import EmailButton from "./EmailButton";
+import { sectionEyebrow } from "../lib/sections";
 import "./Contact.css";
 
 export default function Contact() {
@@ -8,17 +9,17 @@ export default function Contact() {
     <section id="contact" className="wrap">
       <div className="contact">
         <div className="contact__main">
-          <div className="eyebrow" style={{ marginBottom: 16 }}>
-            05 — Contact
+          <div className="eyebrow contact__eyebrow">
+            {sectionEyebrow("contact")}
           </div>
           <h2 className="contact__title">
-            Open to <span className="grad-text">Developer roles</span>{" "}
+            Open to <span className="grad-text">Developer roles</span>
           </h2>
           <p>
             Looking for relevant roles where I can build production-grade
             applications.
           </p>
-          <div className="btn-row" style={{ animation: "none" }}>
+          <div className="btn-row">
             <EmailButton className="btn btn--solid">send_message</EmailButton>
             <a
               className="btn btn--ghost"
