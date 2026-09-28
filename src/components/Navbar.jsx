@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useTheme } from "../hooks/useTheme";
+import { useDismiss } from "../hooks/useDismiss";
 import { idToPath, navigateToSection } from "../lib/sectionPaths";
 import ThemeToggle from "./ThemeToggle";
 import agMarkLight from "../assets/brand/ag-mark-light.png";
@@ -16,9 +17,17 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [theme, toggleTheme] = useTheme();
+  const navRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  const close = useCallback((reason) => {
+    setOpen(false);
+    if (reason === "escape") toggleRef.current?.focus();
+  }, []);
+  useDismiss(navRef, open, close);
 
   return (
-    <nav className="navbar">
+    <nav ref={navRef} className="navbar" aria-label="Primary">
       <a href="/" className="navbar__brand" onClick={navigateToSection("top")}>
         <img
           src={agMarkLight}
@@ -34,6 +43,7 @@ export default function Navbar() {
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
 
         <button
+          ref={toggleRef}
           type="button"
           className="navbar__toggle"
           aria-expanded={open}

@@ -6,7 +6,9 @@ export default function Quote() {
     <section className="wrap quote-section">
       <div className="quote-box">
         <div className="quote-box__topline" />
-        <span className="quote-mark">"</span>
+        <span className="quote-mark" aria-hidden="true">
+          "
+        </span>
         <blockquote>{quote.text}</blockquote>
         <span className="quote-attr">— {quote.author}</span>
       </div>

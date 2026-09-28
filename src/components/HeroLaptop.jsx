@@ -21,13 +21,12 @@ export default function HeroLaptop() {
                 <div className="lp-display lp-display--headline">
                   <div className="lp-cam" />
                   <div className="lp-headline">
-                    <p className="lp-headline__kicker">hello world</p>
+                    <p className="lp-headline__kicker">hello world!</p>
                     <p className="lp-headline__statement">
-                      I design <span className="lp-headline__amp">&amp;</span>{" "}
-                      craft beautiful websites that solve your{" "}
-                      <span className="lp-headline__accent">
-                        business tasks
-                      </span>
+                      <span className="lp-headline__accent">Curiuos</span> by
+                      nature. &nbsp;
+                      <span className="lp-headline__accent">Developer</span> by
+                      craft.
                     </p>
                   </div>
                 </div>

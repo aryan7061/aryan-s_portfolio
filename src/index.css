@@ -59,6 +59,7 @@ html[data-theme="light"] {
   --text: #08271c;
   --text-soft: #174c3a;
   --muted: #389c7a;
+  --muted: #2b7a5f;
 
   --selection-bg: rgba(40, 116, 90, 0.25);
   --grid-line: rgba(8, 39, 28, 0.05);

@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useScrolledPast } from "../hooks/useScrolled";
 import { useNearFooter } from "../hooks/useNearFooter";
+import { useDismiss } from "../hooks/useDismiss";
 import { idToPath, navigateToSection } from "../lib/sectionPaths";
 import "./ScrollNav.css";
 
@@ -18,28 +19,20 @@ export default function ScrollNav() {
   const nearFooter = useNearFooter();
   const visible = scrolledPast && !nearFooter;
   const [open, setOpen] = useState(false);
+  const [wasVisible, setWasVisible] = useState(visible);
   const rootRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  useEffect(() => {
-    if (!visible && open) setOpen(false);
-  }, [visible, open]);
+  if (visible !== wasVisible) {
+    setWasVisible(visible);
+    if (!visible) setOpen(false);
+  }
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (rootRef.current && !rootRef.current.contains(event.target)) {
-        setOpen(false);
-      }
-    }
-    function handleKeyDown(event) {
-      if (event.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
+  const close = useCallback((reason) => {
+    setOpen(false);
+    if (reason === "escape") buttonRef.current?.focus();
   }, []);
+  useDismiss(rootRef, open, close);
 
   return (
     <>
@@ -52,14 +45,30 @@ export default function ScrollNav() {
       <div
         ref={rootRef}
         className={`scroll-nav ${visible ? "is-visible" : ""}`}
+        inert={!visible}
       >
+        <button
+          ref={buttonRef}
+          type="button"
+          className="scroll-nav__btn"
+          aria-expanded={open}
+          aria-controls="scroll-nav-menu"
+          aria-label="Jump to section"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span aria-hidden="true">{open ? "✕" : "↑"}</span>
+        </button>
+
         {open && (
-          <div className="scroll-nav__menu" role="menu">
+          <nav
+            id="scroll-nav-menu"
+            className="scroll-nav__menu"
+            aria-label="Jump to section"
+          >
             {SECTIONS.map((item) => (
               <a
                 key={item.id}
                 href={idToPath(item.id)}
-                role="menuitem"
                 className="scroll-nav__bubble"
                 onClick={(event) => {
                   navigateToSection(item.id)(event);
@@ -69,19 +78,8 @@ export default function ScrollNav() {
                 {item.label}
               </a>
             ))}
-          </div>
+          </nav>
         )}
-
-        <button
-          type="button"
-          className="scroll-nav__btn"
-          aria-expanded={open}
-          aria-haspopup="true"
-          aria-label="Jump to section"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span aria-hidden="true">{open ? "✕" : "↑"}</span>
-        </button>
       </div>
     </>
   );

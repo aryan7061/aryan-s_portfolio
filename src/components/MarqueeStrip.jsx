@@ -9,7 +9,7 @@ export default function MarqueeStrip() {
   const track = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
-    <div className="marquee-strip">
+    <div className="marquee-strip" aria-hidden="true">
       <div className="marquee-track">
         {track.map((item, i) => (
           <span key={`${item}-${i}`}>

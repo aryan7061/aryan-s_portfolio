@@ -52,9 +52,9 @@ export const profile = {
   resumeFileName: "Aryan-Gupta-Resume.pdf",
   status: "React · TypeScript · Node.js · NestJS · GraphQL · PostgreSQL",
   introLede:
-    "Hi, I'm a full stack developer building responsive, API-driven web applications with React, TypeScript, Node.js, and PostgreSQL.",
+    "Building responsive applications with React, TypeScript, Node.js, and PostgreSQL — focused on clean, practical, and scalable solutions.",
   summary:
-    "Full stack developer with experience building responsive applications using React.js, TypeScript, JavaScript, Redux, and REST APIs. I designed, developed, and deployed HisaabBook, a full stack CRM built with React, TypeScript, NestJS, GraphQL, PostgreSQL, and server-side authorization. Experienced in API integration, working with databases, and collaborating with backend teams on API contracts. Currently expanding my full stack skills across MERN and Python.",
+    "From the interface users see to the data behind it, the interesting part is understanding how everything comes together. The development journey spans React.js, TypeScript, JavaScript, Redux, REST APIs, and databases. HisaabBook is a key project — a full stack CRM designed, developed, and deployed using React, TypeScript, NestJS, GraphQL, PostgreSQL, and server-side authorization. Building responsive applications, connecting frontend and backend systems, and working with APIs and data are at the core of the work. Currently working with MERN stack and Python to keep growing as a full stack developer.",
 };
 
 export const facts = [
@@ -66,20 +66,20 @@ export const facts = [
 
 export const highlights = [
   {
-    title: "Production SPAs",
-    body: "3 single page applications with 25+ reusable components, Redux state management, and 30+ integrated REST API endpoints, built alongside a backend team.",
+    title: "End-to-End Development",
+    body: "Connecting the layers that turn an idea into a working web application.",
   },
   {
-    title: "Full stack delivery",
-    body: "Built and deployed HisaabBook solo using React/TypeScript on a NestJS/GraphQL + PostgreSQL backend with JWT auth and role-based access control, live on Vercel and Render.",
+    title: "API Integration",
+    body: "Integrating APIs to connect the interface with the services and data behind it.",
   },
   {
-    title: "Complex UI work",
-    body: "Drag and drop Kanban boards, dashboard analytics, and server side pagination and filtering.",
+    title: "Database Management",
+    body: "Designing and working with databases that keep application data organized and accessible.",
   },
   {
-    title: "Design to code",
-    body: "Figma designs converted into clean, cross browser production pages with Tailwind CSS and component libraries.",
+    title: "Security & Optimization",
+    body: "Focusing on authentication, authorization, performance, and the details that make applications work better.",
   },
 ];
 
