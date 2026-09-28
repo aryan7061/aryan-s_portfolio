@@ -158,11 +158,11 @@ export const projects = [
     name: "HisaabBook",
     kicker: "Full-Stack CRM Application",
     description:
-      "Built and deployed a full-stack CRM for managing companies, contacts, deals, and tasks, with a React/TypeScript frontend (Refine, Ant Design) and a NestJS/GraphQL backend on PostgreSQL, hosted independently on Vercel and Render.",
+      "Designed, built, and deployed a CRM for companies, contacts, deals, and tasks as a solo project: a React 19 + TypeScript frontend (Refine, Ant Design) on Vercel and a NestJS + GraphQL API on Render, with route-level code splitting and a one-click demo login.",
     points: [
-      "Implemented server-side, role-based data authorization so every user only accesses records they own or created, enforced at the API layer rather than only in the UI.",
-      "Built a drag-and-drop Kanban board for task management using dnd-kit, with server-side pagination and filtering per column.",
-      "Built dashboard analytics — deal pipeline value, win-rate tracking, and task-stage trends — using GraphQL aggregate queries, with Excel export and multi-currency (INR/USD) support via live exchange rates.",
+      "Modeled 7 relational PostgreSQL entities with TypeORM and versioned migrations; exposed GraphQL CRUD with pagination, filtering, sorting, and aggregate queries, using DataLoader to prevent N+1 queries.",
+      "Implemented JWT authentication (bcrypt-hashed passwords) and role-based access control for 4 roles, enforced on the server so users can't reach other users' records by editing GraphQL queries from the client.",
+      "Built 17 routed pages, including a drag-and-drop Kanban board (dnd-kit) with server-side pagination per column, and analytics dashboards (pipeline value, win rate, task-stage trends) with Excel export and live INR/USD conversion.",
     ],
     tech: [
       "React",
