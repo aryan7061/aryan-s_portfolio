@@ -11,7 +11,7 @@ export default function Contact() {
             05 — Contact
           </div>
           <h2 className="contact__title">
-            Open to <span className="grad-text">Frontend</span> opportunities
+            Open to <span className="grad-text">Developing</span> opportunities
           </h2>
           <p>
             Looking for relevant roles where I can build production-grade React
