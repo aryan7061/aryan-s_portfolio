@@ -30,7 +30,9 @@ export default function ContactTicket() {
             </div>
             <div>
               <dt>Phone</dt>
-              <dd>{profile.phone}</dd>
+              <dd>
+                <a href={profile.phoneUrl}>{profile.phone}</a>
+              </dd>
             </div>
             <div>
               <dt>GitHub</dt>

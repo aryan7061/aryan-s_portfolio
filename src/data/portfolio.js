@@ -26,69 +26,60 @@ import vscodeIcon from "devicon/icons/vscode/vscode-original.svg";
 import vercelIcon from "devicon/icons/vercel/vercel-original.svg";
 import chromeIcon from "devicon/icons/chrome/chrome-original.svg";
 import typeormIcon from "../assets/icons/typeorm.svg";
-import { siRender } from "simple-icons";
+import { siRefine, siRender } from "simple-icons";
 
-const renderIcon = `data:image/svg+xml,${encodeURIComponent(
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#${siRender.hex}"><path d="${siRender.path}"/></svg>`,
-)}`;
+function simpleIconSrc(icon) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#${icon.hex}"><path d="${icon.path}"/></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
+const renderIcon = simpleIconSrc(siRender);
+const refineIcon = simpleIconSrc(siRefine);
 
 export const profile = {
   name: "Aryan Gupta",
-  role: "Frontend Developer",
-  company: "Tricity Services",
-  companyStart: "December 2025",
+  role: "Full Stack Developer",
   email: "aryanguptawork26@gmail.com",
   emailUrl:
     "https://mail.google.com/mail/?view=cm&fs=1&to=aryanguptawork26@gmail.com",
   phone: "+91 7367993351",
+  phoneUrl: "tel:+917367993351",
   githubUrl: "https://github.com/aryan7061",
   githubHandle: "aryan7061",
   linkedinUrl: "https://www.linkedin.com/in/aryan-gupta-2026bvf",
   linkedinHandle: "aryan-gupta-2026bvf",
   resumeUrl: "/aryan-gupta-resume.pdf",
   resumeFileName: "Aryan-Gupta-Resume.pdf",
-  status: "React Developer · Frontend Developer · Fullstack Developer",
-  stackLine: "MERN · JavaScript · TypeScript",
-  introRoles: "React Developer · Frontend Developer · Fullstack Developer",
+  status: "React · TypeScript · Node.js · NestJS · GraphQL · PostgreSQL",
   introLede:
-    "Hello, I am a Developer with around 1 year of experience designing and developing web applications.",
+    "Hi, I'm a full stack developer building responsive, API-driven web applications with React, TypeScript, NodeJS, and PostgreSQL.",
   summary:
-    "Developer experienced in building React applications on the frontend and MERN, NestJS/GraphQL services on the backend, backed by PostgreSQL and MySQL/MongoDB. Comfortable working across the entire stack — from responsive UIs and Redux state management, to designing GraphQL APIs, structuring relational databases, and enforcing server-side authorization. Has independently built and deployed a production-style full-stack application end to end, and also works professionally alongside backend teams to ship functional web apps.",
+    "Full stack developer with experience building responsive applications using React.js, TypeScript, JavaScript, Redux, and REST APIs. I designed, developed, and deployed HisaabBook, a full stack CRM built with React, TypeScript, NestJS, GraphQL, PostgreSQL, and server-side authorization. Experienced in API integration, working with databases, and collaborating with backend teams on API contracts. Currently expanding my full stack skills across MERN and Python.",
 };
-export const heroLines = [
-  "$ whoami",
-  "  Aryan Gupta",
-  "$ cat role.txt",
-  "  Web Developer @ Tricity Services",
-  "$ echo $STACK",
-  '  "React · JavaScript · TypeScript · Redux · GraphQL"',
-  "$ cat status.txt",
-  "  open_to_work=true",
-];
 
 export const facts = [
   { label: "Current Role", value: "Frontend Developer", serif: true },
-  { label: "Experience", value: "Dec 2025 - Present" },
-  { label: "Frontend", value: "React.js · JavaScript · TypeScript · Redux" },
-  { label: "Backend", value: "Node.js · NextJS · GraphQL · PostgreSQL" },
+  { label: "Experience", value: "Dec 2025 – Present" },
+  { label: "Frontend", value: "React.js · TypeScript · JavaScript · Redux" },
+  { label: "Backend", value: "Node.js · NestJS · GraphQL · PostgreSQL" },
 ];
 
 export const highlights = [
   {
     title: "Production SPAs",
-    body: "Responsive single-page applications with Redux state flow and REST API integration, built alongside a backend team.",
+    body: "3 single page applications with 25+ reusable components, Redux state management, and 30+ integrated REST API endpoints, built alongside a backend team.",
   },
   {
-    title: "Full-stack delivery",
-    body: "Built and deployed HisaabBook end to end — React/TypeScript on a NestJS/GraphQL + PostgreSQL backend, live on Vercel and Render.",
+    title: "Full stack delivery",
+    body: "Built and deployed HisaabBook solo using React/TypeScript on a NestJS/GraphQL + PostgreSQL backend with JWT auth and role-based access control, live on Vercel and Render.",
   },
   {
     title: "Complex UI work",
-    body: "Drag-and-drop Kanban boards, dashboard analytics, and server-side pagination and filtering.",
+    body: "Drag and drop Kanban boards, dashboard analytics, and server side pagination and filtering.",
   },
   {
     title: "Design to code",
-    body: "Figma designs converted into clean, cross-browser production pages with Tailwind CSS and component libraries.",
+    body: "Figma designs converted into clean, cross browser production pages with Tailwind CSS and component libraries.",
   },
 ];
 
@@ -100,7 +91,7 @@ export const skillGroups = [
       { name: "TypeScript", icon: typescriptIcon },
       { name: "JavaScript", icon: javascriptIcon },
       { name: "Redux", icon: reduxIcon },
-      { name: "Redux Toolkit", icon: reduxIcon }, // no distinct devicon logo — reuses Redux's
+      { name: "Redux Toolkit", icon: reduxIcon },
       { name: "Tailwind", icon: tailwindIcon },
       { name: "HTML5", icon: html5Icon },
       { name: "CSS3", icon: css3Icon },
@@ -111,6 +102,7 @@ export const skillGroups = [
       { name: "Axios", icon: axiosIcon },
       { name: "Material UI", icon: materialUiIcon },
       { name: "Ant Design", icon: antDesignIcon },
+      { name: "Refine", icon: refineIcon, invertOnDark: true },
       { name: "Bootstrap", icon: bootstrapIcon },
       { name: "React Router", icon: reactRouterIcon },
     ],
@@ -131,33 +123,33 @@ export const skillGroups = [
     label: "Tools",
     skills: [
       { name: "Git", icon: gitIcon },
-      { name: "GitHub", icon: githubIcon },
+      { name: "GitHub", icon: githubIcon, invertOnDark: true },
       { name: "Figma", icon: figmaIcon },
       { name: "VS Code", icon: vscodeIcon },
-      { name: "Vercel", icon: vercelIcon },
+      { name: "Vercel", icon: vercelIcon, invertOnDark: true },
       { name: "DevTools", icon: chromeIcon },
-      { name: "Render", icon: renderIcon },
+      { name: "Render", icon: renderIcon, invertOnDark: true },
     ],
   },
 ];
 
 export const experience = [
   {
+    id: "tricity-frontend",
     role: "Front End Developer",
     company: "Tricity Services",
-    period: "December 2025 — Present",
+    period: "Dec 2025 – Present",
     points: [
-      "Built responsive web applications and Single Page Applications (SPAs) using React.js and Tailwind CSS.",
-      "Managed application state with Redux to ensure smooth data flow across components.",
-      "Connected RESTful APIs to fetch, handle JSON data, and render dynamic content from backend services.",
-      "Worked with the backend team to connect the frontend UI to SQL databases via APIs.",
-      "Used Vite to set up projects and keep build performance optimized.",
-      "Cleanly converted Figma designs into cross-browser compatible web pages.",
-      "Kept code organized using Git/GitHub and used Chrome DevTools for debugging layouts.",
+      "Developed 3 single-page applications using React.js and Tailwind CSS, with 25+ reusable components for consistent UI and maintainable code.",
+      "Managed shared application state with Redux, coordinating API data and UI state across multiple screens.",
+      "Integrated 30+ REST API endpoints using Axios, implementing structured loading, error, and data handling states.",
+      "Collaborated with backend developers to define API request/response contracts and connect UI workflows with PostgreSQL- or MySQL-backed services.",
+      "Translated Figma designs into cross-browser interfaces with consistent layouts, interactions, and responsive behavior.",
+      "Debugged and resolved frontend issues, improving application reliability, usability, and overall user experience.",
+      "Contributed to full stack development through API integration, database-backed features, debugging, and application deployment.",
     ],
   },
 ];
-
 export const projects = [
   {
     index: "01",
@@ -180,6 +172,7 @@ export const projects = [
       "NestJS",
       "GraphQL",
       "PostgreSQL",
+      "TypeORM",
       "Vercel",
       "Render",
     ],

@@ -24,7 +24,7 @@ export default function HeroLaptop() {
                     <p className="lp-headline__kicker">hello world</p>
                     <p className="lp-headline__statement">
                       I design <span className="lp-headline__amp">&amp;</span>{" "}
-                      craft beautiful websites for users, that solves your{" "}
+                      craft beautiful websites that solve your{" "}
                       <span className="lp-headline__accent">
                         business tasks
                       </span>

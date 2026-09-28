@@ -61,11 +61,6 @@
   animation: fadeSlideUp 0.7s ease 0.26s both;
 }
 
-.hero__lede strong {
-  color: var(--accent);
-  font-weight: 600;
-}
-
 .btn-row {
   display: flex;
   flex-wrap: wrap;

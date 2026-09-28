@@ -9,7 +9,7 @@ export default function Experience() {
 
       <div className="timeline">
         {experience.map((job) => (
-          <article className="timeline-item" key={job.company}>
+          <article className="timeline-item" key={job.id}>
             <div className="timeline-item__marker" aria-hidden="true" />
             <div className="timeline-item__body">
               <div className="timeline-item__head">

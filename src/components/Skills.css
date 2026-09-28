@@ -56,6 +56,10 @@
   background: var(--panel-hover);
 }
 
+html[data-theme="dark"] .skill__icon--invert {
+  filter: invert(1);
+}
+
 .skill__glyph {
   font-size: 1.4rem;
   color: var(--accent);

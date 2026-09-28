@@ -35,6 +35,9 @@ export default function Skills() {
           <div className="skill" key={skill.name}>
             {skill.icon ? (
               <img
+                className={
+                  skill.invertOnDark ? "skill__icon--invert" : undefined
+                }
                 src={skill.icon}
                 alt=""
                 width="34"

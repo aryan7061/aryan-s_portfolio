@@ -2,13 +2,16 @@ import { profile, facts } from "../data/portfolio";
 import HeroLaptop from "./HeroLaptop";
 import "./Hero.css";
 
+const [firstName, ...restOfName] = profile.name.split(" ");
+
 export default function Hero() {
   return (
     <section id="top" className="hero-section wrap">
       <div className="hero">
         <div className="hero__main">
           <h1 className="hero__title">
-            Aryan <span className="grad-text">Gupta</span>
+            {firstName}{" "}
+            <span className="grad-text">{restOfName.join(" ")}</span>
           </h1>
 
           <div className="status-pill">
