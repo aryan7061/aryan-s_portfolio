@@ -1,24 +1,25 @@
+import { useState } from "react";
 import "./ThemeToggle.css";
 
-function Dot({ id, className }) {
+function Dot({ className }) {
   return (
-    <svg id={id} className={className} viewBox="0 0 100 100" aria-hidden="true">
+    <svg className={className} viewBox="0 0 100 100" aria-hidden="true">
       <circle cx="50" cy="50" r="50" />
     </svg>
   );
 }
 
-function Star({ id, className }) {
+function Star({ className }) {
   return (
-    <svg id={id} className={className} viewBox="0 0 100 100" aria-hidden="true">
+    <svg className={className} viewBox="0 0 100 100" aria-hidden="true">
       <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
     </svg>
   );
 }
 
-function Cloud({ id, className }) {
+function Cloud({ className }) {
   return (
-    <svg id={id} className={className} viewBox="0 0 100 60" aria-hidden="true">
+    <svg className={className} viewBox="0 0 100 60" aria-hidden="true">
       <ellipse cx="30" cy="40" rx="25" ry="20" />
       <ellipse cx="55" cy="25" rx="25" ry="25" />
       <ellipse cx="75" cy="40" rx="20" ry="18" />
@@ -27,36 +28,42 @@ function Cloud({ id, className }) {
 }
 
 export default function ThemeToggle({ theme, onToggle }) {
-  const isDark = theme === "dark";
+  const [hasToggled, setHasToggled] = useState(false);
+
+  function handleChange() {
+    setHasToggled(true);
+    onToggle();
+  }
 
   return (
-    <label className="switch" aria-label="Toggle light or dark theme">
+    <label className={`switch${hasToggled ? " switch--animated" : ""}`}>
       <input
-        id="theme-switch-input"
+        className="switch__input"
         type="checkbox"
-        checked={isDark}
-        onChange={onToggle}
+        aria-label="Dark mode"
+        checked={theme === "dark"}
+        onChange={handleChange}
       />
       <div className="slider round">
-        <Cloud id="cloud-1" className="cloud-dark" />
-        <Cloud id="cloud-2" className="cloud-dark" />
-        <Cloud id="cloud-3" className="cloud-dark" />
-        <Cloud id="cloud-4" className="cloud-light" />
-        <Cloud id="cloud-5" className="cloud-light" />
-        <Cloud id="cloud-6" className="cloud-light" />
+        <Cloud className="cloud-dark cloud--1" />
+        <Cloud className="cloud-dark cloud--2" />
+        <Cloud className="cloud-dark cloud--3" />
+        <Cloud className="cloud-light cloud--4" />
+        <Cloud className="cloud-light cloud--5" />
+        <Cloud className="cloud-light cloud--6" />
         <div className="sun-moon">
-          <Dot id="moon-dot-1" className="moon-dot" />
-          <Dot id="moon-dot-2" className="moon-dot" />
-          <Dot id="moon-dot-3" className="moon-dot" />
-          <Dot id="light-ray-1" className="light-ray" />
-          <Dot id="light-ray-2" className="light-ray" />
-          <Dot id="light-ray-3" className="light-ray" />
+          <Dot className="moon-dot moon-dot--1" />
+          <Dot className="moon-dot moon-dot--2" />
+          <Dot className="moon-dot moon-dot--3" />
+          <Dot className="light-ray light-ray--1" />
+          <Dot className="light-ray light-ray--2" />
+          <Dot className="light-ray light-ray--3" />
         </div>
         <div className="stars">
-          <Star id="star-1" className="star" />
-          <Star id="star-2" className="star" />
-          <Star id="star-3" className="star" />
-          <Star id="star-4" className="star" />
+          <Star className="star star--1" />
+          <Star className="star star--2" />
+          <Star className="star star--3" />
+          <Star className="star star--4" />
         </div>
       </div>
     </label>

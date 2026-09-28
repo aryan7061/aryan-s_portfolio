@@ -6,7 +6,7 @@
   flex-shrink: 0;
 }
 
-.switch #theme-switch-input {
+.switch__input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -36,17 +36,20 @@
   transition: 0.4s;
 }
 
-#theme-switch-input:checked + .slider {
+.switch__input:checked + .slider {
   background-color: var(--bg);
 }
 
-#theme-switch-input:focus-visible + .slider {
+.switch__input:focus-visible + .slider {
   box-shadow: 0 0 0 2px var(--accent);
 }
 
-#theme-switch-input:checked + .slider .sun-moon {
+.switch__input:checked + .slider .sun-moon {
   transform: translateX(22px);
   background-color: #fff;
+}
+
+.switch--animated .switch__input:checked + .slider .sun-moon {
   animation: rotate-center 0.6s ease-in-out both;
 }
 
@@ -65,7 +68,7 @@
   fill: #999;
 }
 
-#theme-switch-input:checked + .slider .sun-moon .moon-dot {
+.switch__input:checked + .slider .sun-moon .moon-dot {
   opacity: 1;
 }
 
@@ -77,7 +80,7 @@
   border-radius: 50%;
 }
 
-#moon-dot-1 {
+.moon-dot--1 {
   left: 8px;
   top: 2px;
   position: absolute;
@@ -86,7 +89,7 @@
   z-index: 4;
 }
 
-#moon-dot-2 {
+.moon-dot--2 {
   left: 2px;
   top: 8px;
   position: absolute;
@@ -95,7 +98,7 @@
   z-index: 4;
 }
 
-#moon-dot-3 {
+.moon-dot--3 {
   left: 13px;
   top: 15px;
   position: absolute;
@@ -104,30 +107,30 @@
   z-index: 4;
 }
 
-#light-ray-1,
-#light-ray-2,
-#light-ray-3 {
+.light-ray--1,
+.light-ray--2,
+.light-ray--3 {
   position: absolute;
   z-index: -1;
   fill: #fff;
   opacity: 10%;
 }
 
-#light-ray-1 {
+.light-ray--1 {
   left: -7px;
   top: -7px;
   width: 36px;
   height: 36px;
 }
 
-#light-ray-2 {
+.light-ray--2 {
   left: -14px;
   top: -14px;
   width: 46px;
   height: 46px;
 }
 
-#light-ray-3 {
+.light-ray--3 {
   left: -15px;
   top: -15px;
   width: 50px;
@@ -157,43 +160,43 @@
   animation-play-state: paused;
 }
 
-#theme-switch-input:checked + .slider .cloud-light,
-#theme-switch-input:checked + .slider .cloud-dark {
+.switch__input:checked + .slider .cloud-light,
+.switch__input:checked + .slider .cloud-dark {
   opacity: 0;
   animation-play-state: paused;
 }
 
-#cloud-1 {
+.cloud--1 {
   left: 25px;
   top: 13px;
   width: 34px;
 }
 
-#cloud-2 {
+.cloud--2 {
   left: 37px;
   top: 8px;
   width: 17px;
 }
 
-#cloud-3 {
+.cloud--3 {
   left: 15px;
   top: 20px;
   width: 25px;
 }
 
-#cloud-4 {
+.cloud--4 {
   left: 30px;
   top: 15px;
   width: 34px;
 }
 
-#cloud-5 {
+.cloud--5 {
   left: 40px;
   top: 12px;
   width: 17px;
 }
 
-#cloud-6 {
+.cloud--6 {
   left: 18px;
   top: 22px;
   width: 25px;
@@ -229,44 +232,44 @@
   animation-iteration-count: infinite;
   animation-play-state: paused;
 }
-.switch:hover #theme-switch-input:not(:checked) + .slider .cloud-light,
-.switch:hover #theme-switch-input:not(:checked) + .slider .cloud-dark,
-.switch:focus-within #theme-switch-input:not(:checked) + .slider .cloud-light,
-.switch:focus-within #theme-switch-input:not(:checked) + .slider .cloud-dark {
+.switch:hover .switch__input:not(:checked) + .slider .cloud-light,
+.switch:hover .switch__input:not(:checked) + .slider .cloud-dark,
+.switch:focus-within .switch__input:not(:checked) + .slider .cloud-light,
+.switch:focus-within .switch__input:not(:checked) + .slider .cloud-dark {
   animation-play-state: running;
 }
 
-.switch:hover #theme-switch-input:checked + .slider .star,
-.switch:focus-within #theme-switch-input:checked + .slider .star {
+.switch:hover .switch__input:checked + .slider .star,
+.switch:focus-within .switch__input:checked + .slider .star {
   animation-play-state: running;
 }
 
-#theme-switch-input:checked + .slider .stars {
+.switch__input:checked + .slider .stars {
   transform: translateY(0);
   opacity: 1;
 }
 
-#star-1 {
+.star--1 {
   width: 16px;
   top: 2px;
   left: 3px;
   animation-delay: 0.3s;
 }
 
-#star-2 {
+.star--2 {
   width: 5px;
   top: 13px;
   left: 3px;
 }
 
-#star-3 {
+.star--3 {
   width: 10px;
   top: 16px;
   left: 8px;
   animation-delay: 0.6s;
 }
 
-#star-4 {
+.star--4 {
   width: 15px;
   top: 0px;
   left: 15px;

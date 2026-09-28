@@ -52,7 +52,7 @@ export const profile = {
   resumeFileName: "Aryan-Gupta-Resume.pdf",
   status: "React · TypeScript · Node.js · NestJS · GraphQL · PostgreSQL",
   introLede:
-    "Hi, I'm a full stack developer building responsive, API-driven web applications with React, TypeScript, NodeJS, and PostgreSQL.",
+    "Hi, I'm a full stack developer building responsive, API-driven web applications with React, TypeScript, Node.js, and PostgreSQL.",
   summary:
     "Full stack developer with experience building responsive applications using React.js, TypeScript, JavaScript, Redux, and REST APIs. I designed, developed, and deployed HisaabBook, a full stack CRM built with React, TypeScript, NestJS, GraphQL, PostgreSQL, and server-side authorization. Experienced in API integration, working with databases, and collaborating with backend teams on API contracts. Currently expanding my full stack skills across MERN and Python.",
 };
@@ -152,6 +152,7 @@ export const experience = [
 ];
 export const projects = [
   {
+    id: "hisaabbook",
     index: "01",
     kind: "Full-stack",
     featured: true,
@@ -183,6 +184,7 @@ export const projects = [
     },
   },
   {
+    id: "prime-tube",
     index: "02",
     kind: "Frontend",
     featured: false,

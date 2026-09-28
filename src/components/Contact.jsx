@@ -11,11 +11,11 @@ export default function Contact() {
             05 — Contact
           </div>
           <h2 className="contact__title">
-            Open to <span className="grad-text">Developing</span> opportunities
+            Open to <span className="grad-text">Developer roles</span>{" "}
           </h2>
           <p>
-            Looking for relevant roles where I can build production-grade React
-            interfaces.
+            Looking for relevant roles where I can build production-grade
+            applications.
           </p>
           <div className="btn-row" style={{ animation: "none" }}>
             <a

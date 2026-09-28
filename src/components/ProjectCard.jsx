@@ -16,7 +16,6 @@ export default function ProjectCard({ project }) {
             <span className="project__index">
               {project.index} — {project.kind}
             </span>
-            {project.featured ? <Chip small>featured</Chip> : null}
           </div>
 
           <h3>{project.name}</h3>
