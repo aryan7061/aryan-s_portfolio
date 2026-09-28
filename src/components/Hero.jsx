@@ -4,7 +4,7 @@ import "./Hero.css";
 
 export default function Hero() {
   return (
-    <section className="hero-section wrap">
+    <section id="top" className="hero-section wrap">
       <div className="hero">
         <div className="hero__main">
           <h1 className="hero__title">

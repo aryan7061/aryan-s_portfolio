@@ -1,13 +1,19 @@
+export const HOME_ID = "top";
+
 export function idToPath(id) {
-  return id === "top" ? "/" : `/${id}`;
+  return id === HOME_ID ? "/" : `/${id}`;
 }
 
 export function pathToId(pathname) {
   const id = pathname.replace(/^\/+|\/+$/g, "");
-  return id || "top";
+  return id || HOME_ID;
 }
 
-export function scrollToId(id, behavior = "auto") {
+export function scrollToId(id, behavior = "instant") {
+  if (id === HOME_ID) {
+    window.scrollTo({ top: 0, behavior });
+    return;
+  }
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior });
 }

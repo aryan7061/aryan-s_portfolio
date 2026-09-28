@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import { idToPath, pathToId, scrollToId } from "../lib/sectionPaths";
+import { HOME_ID, idToPath, pathToId, scrollToId } from "../lib/sectionPaths";
 
 export function useActiveSection(ids) {
   useEffect(() => {
+    window.history.scrollRestoration = "manual";
+
     const initialId = pathToId(window.location.pathname);
-    if (initialId !== "top" && document.getElementById(initialId)) {
+    if (initialId !== HOME_ID) {
       requestAnimationFrame(() => scrollToId(initialId));
     }
 

@@ -11,13 +11,20 @@ import Footer from "./components/Footer";
 import ScrollNav from "./components/ScrollNav";
 import { useActiveSection } from "./hooks/useActiveSection";
 
-const NAV_SECTION_IDS = ["about", "stack", "experience", "projects", "contact"];
+const NAV_SECTION_IDS = [
+  "top",
+  "about",
+  "stack",
+  "experience",
+  "projects",
+  "contact",
+];
 
 export default function App() {
   useActiveSection(NAV_SECTION_IDS);
 
   return (
-    <div className="page" id="top">
+    <div className="page">
       <div className="glow glow-a" />
       <div className="glow glow-b" />
 

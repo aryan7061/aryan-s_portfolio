@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      // Runs before first paint so the page never flashes the wrong theme.
       (function () {
         var stored = localStorage.getItem("aryan-theme");
         var theme = stored === "light" || stored === "dark" ? stored : "dark";
@@ -28,6 +27,7 @@
       property="og:description"
       content="Web Developer at Tricity Services, building responsive, API-driven interfaces with React.js, JavaScript, and TypeScript."
     />
+    <link rel="canonical" href="https://aryangupta.dev/" />
     <meta property="og:url" content="https://aryangupta.dev/" />
     <meta property="og:image" content="https://aryangupta.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />

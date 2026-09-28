@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:section(about|stack|experience|projects|contact)",
+      "destination": "/index.html"
+    }
+  ]
+}
