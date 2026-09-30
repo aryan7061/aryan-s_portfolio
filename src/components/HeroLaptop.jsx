@@ -1,8 +1,17 @@
+import { useRef } from "react";
+import { useInView } from "../hooks/useInView";
 import "./HeroLaptop.css";
 
 export default function HeroLaptop() {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
-    <div className="hero-laptop-slot" aria-hidden="true">
+    <div
+      ref={ref}
+      className={inView ? "hero-laptop-slot" : "hero-laptop-slot is-paused"}
+      aria-hidden="true"
+    >
       <div className="laptop-loader">
         <div className="lp-aura" />
         <div className="lp-particles">

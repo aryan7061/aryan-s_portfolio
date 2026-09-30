@@ -119,8 +119,6 @@
   gap: 4px;
   padding: 16px;
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   min-width: 0;
 }
 
@@ -132,7 +130,7 @@
   color: var(--muted);
 }
 
-.hero-fact__label {
+.hero-fact__value {
   font-family: var(--mono);
   font-size: clamp(0.8rem, 1.6vw, 0.9rem);
   color: var(--accent-bright);

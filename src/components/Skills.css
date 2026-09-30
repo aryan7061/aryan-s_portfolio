@@ -44,8 +44,6 @@
   padding: 14px 10px;
   text-align: center;
   box-shadow: var(--card-shadow);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   transition:
     border-color 0.2s,
     background 0.2s;

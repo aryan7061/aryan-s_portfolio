@@ -36,8 +36,6 @@
   --glass-blur: blur(8px) saturate(160%);
   --nav-blur: blur(10px);
   --nav-links-blur: blur(16px) saturate(180%);
-  --marquee-blur: blur(6px);
-
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
@@ -301,14 +299,6 @@ button:focus-visible {
   -webkit-text-fill-color: transparent;
   color: transparent;
   font-style: italic;
-}
-
-.glass {
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  border-color: var(--glass-border);
-  box-shadow: var(--card-shadow);
 }
 
 @media (max-width: 720px) {

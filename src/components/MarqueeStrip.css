@@ -6,8 +6,6 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--strip-bg);
-  -webkit-backdrop-filter: var(--marquee-blur);
-  backdrop-filter: var(--marquee-blur);
 }
 
 .marquee-track {
@@ -32,6 +30,10 @@
   color: var(--accent);
   opacity: 0.5;
   font-style: normal;
+}
+
+.marquee-strip.is-paused .marquee-track {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
