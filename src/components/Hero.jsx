@@ -35,12 +35,12 @@ export default function Hero() {
         <HeroLaptop />
       </div>
 
-      <div className="facts">
+      <div className="hero__facts">
         {facts.map((fact) => (
-          <div className="fact" key={fact.label}>
-            <span className="fact__label">{fact.label}</span>
+          <div className="hero-fact" key={fact.label}>
+            <span className="hero-fact__label">{fact.label}</span>
             <span
-              className={`fact__value ${fact.serif ? "fact__value--serif" : ""}`}
+              className={`hero-fact__value ${fact.serif ? "hero-fact__value--serif" : ""}`}
             >
               {fact.value}
             </span>

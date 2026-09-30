@@ -44,13 +44,16 @@ export default function Navbar() {
           type="button"
           className="navbar__toggle"
           aria-expanded={open}
-          aria-controls="navLinks"
+          aria-controls="navbar-links"
           onClick={() => setOpen((o) => !o)}
         >
           {open ? "close" : "menu"}
         </button>
 
-        <div id="navLinks" className={`navbar__links ${open ? "is-open" : ""}`}>
+        <div
+          id="navbar-links"
+          className={`navbar__links ${open ? "is-open" : ""}`}
+        >
           {NAV_SECTIONS.map((item) => (
             <a
               key={item.id}

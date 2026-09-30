@@ -1,4 +1,4 @@
-footer {
+.site-footer {
   position: relative;
   z-index: 10;
   padding: 24px var(--section-pad-x);
@@ -10,26 +10,26 @@ footer {
   flex-wrap: wrap;
 }
 
-footer span {
+.site-footer__copy {
   font-family: var(--mono);
   font-size: 0.72rem;
   color: var(--muted);
 }
 
-.footer-links {
+.site-footer__links {
   display: flex;
   gap: 24px;
 }
 
-.footer-links a,
-.footer-links button {
+.site-footer__links a,
+.site-footer__links button {
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
   letter-spacing: 0.06em;
 }
 
-.footer-links a:hover,
-.footer-links button:hover {
+.site-footer__links a:hover,
+.site-footer__links button:hover {
   color: var(--accent);
 }

@@ -37,7 +37,7 @@
   margin-bottom: -8px;
 }
 
-blockquote {
+.quote-box__text {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.2rem, 3vw, 1.8rem);

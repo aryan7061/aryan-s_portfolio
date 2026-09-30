@@ -9,7 +9,7 @@ export default function Quote() {
         <span className="quote-mark" aria-hidden="true">
           "
         </span>
-        <blockquote>{quote.text}</blockquote>
+        <blockquote className="quote-box__text">{quote.text}</blockquote>
         <span className="quote-attr">— {quote.author}</span>
       </div>
     </section>

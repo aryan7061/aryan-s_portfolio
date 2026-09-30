@@ -102,7 +102,7 @@
   background: var(--accent-wash);
 }
 
-.facts {
+.hero__facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
@@ -113,7 +113,7 @@
   background: var(--line);
 }
 
-.fact {
+.hero-fact {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -124,7 +124,7 @@
   min-width: 0;
 }
 
-.fact__label {
+.hero-fact__label {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
@@ -132,7 +132,7 @@
   color: var(--muted);
 }
 
-.fact__value {
+.hero-fact__label {
   font-family: var(--mono);
   font-size: clamp(0.8rem, 1.6vw, 0.9rem);
   color: var(--accent-bright);
@@ -140,13 +140,13 @@
   overflow-wrap: break-word;
 }
 
-.fact__value--serif {
+.hero-fact__value--serif {
   font-family: var(--serif);
   font-size: clamp(0.88rem, 1.6vw, 1rem);
 }
 
 @media (max-width: 900px) {
-  .facts {
+  .hero__facts {
     grid-template-columns: repeat(2, 1fr);
   }
 }

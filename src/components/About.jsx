@@ -12,14 +12,14 @@ export default function About() {
 
       <p className="about__summary">{profile.summary}</p>
 
-      <div ref={ref} className="cards">
+      <div ref={ref} className="about__cards">
         {highlights.map((item, i) => (
           <div
-            className={`card reveal ${visible ? "is-visible" : ""}`}
+            className={`about-card reveal ${visible ? "is-visible" : ""}`}
             key={item.title}
             style={{ transitionDelay: `${i * 80}ms` }}
           >
-            <span className="card__arrow">▸</span>
+            <span className="about-card__arrow">▸</span>
             <div>
               <h3>{item.title}</h3>
               <p>{item.body}</p>

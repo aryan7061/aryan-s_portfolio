@@ -27,7 +27,11 @@ export default function Skills() {
     <section id="stack" className="wrap">
       <SectionHeading sectionId="stack" title="Tools I build with" />
 
-      <div className="tabs" role="tablist" aria-label="Skill categories">
+      <div
+        className="skills__tabs"
+        role="tablist"
+        aria-label="Skill categories"
+      >
         {skillGroups.map((group, index) => (
           <button
             key={group.label}
@@ -37,7 +41,7 @@ export default function Skills() {
             id={`skills-tab-${index}`}
             type="button"
             role="tab"
-            className="tab"
+            className="skills__tab"
             aria-selected={index === activeIndex}
             aria-controls="skills-panel"
             tabIndex={index === activeIndex ? 0 : -1}
@@ -51,17 +55,17 @@ export default function Skills() {
 
       <div
         id="skills-panel"
-        className="skill-grid"
+        className="skills__grid"
         role="tabpanel"
         aria-labelledby={`skills-tab-${activeIndex}`}
         tabIndex={0}
       >
         {activeGroup.skills.map((skill) => (
-          <div className="skill" key={skill.name}>
+          <div className="skills__item" key={skill.name}>
             {skill.icon ? (
               <img
                 className={
-                  skill.invertOnDark ? "skill__icon--invert" : undefined
+                  skill.invertOnDark ? "skills__icon--invert" : undefined
                 }
                 src={skill.icon}
                 alt=""
@@ -70,11 +74,11 @@ export default function Skills() {
                 loading="lazy"
               />
             ) : (
-              <span className="skill__glyph" aria-hidden="true">
+              <span className="skills__glyph" aria-hidden="true">
                 ◆
               </span>
             )}
-            <span>{skill.name}</span>
+            <span className="skills__name">{skill.name}</span>
           </div>
         ))}
       </div>

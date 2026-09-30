@@ -42,7 +42,7 @@ export default function ProjectCard({ project }) {
             Object.entries(project.links).map(([key, url]) => (
               <a
                 key={key}
-                className="plink"
+                className="project__link"
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +51,9 @@ export default function ProjectCard({ project }) {
               </a>
             ))
           ) : (
-            <span className="plink plink--disabled">links_soon</span>
+            <span className="project__link project__link--disabled">
+              links_soon
+            </span>
           )}
         </div>
       </div>

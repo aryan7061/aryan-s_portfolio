@@ -6,11 +6,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer>
-      <span>
+    <footer className="site-footer">
+      <span className="site-footer__copy">
         © {year} {profile.name} — {profile.role}
       </span>
-      <div className="footer-links">
+      <div className="site-footer__links">
         <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer">
           github
         </a>
