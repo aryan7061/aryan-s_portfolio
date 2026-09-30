@@ -14,6 +14,7 @@
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--card-shadow);
 }
 
 .quote-box__topline {
